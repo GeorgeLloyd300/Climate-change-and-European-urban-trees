@@ -1,0 +1,218 @@
+Species,Niche_available,URBAN_freq,Assen,Belfast,Bologna,Bolzano,Bordeaux,Bristol,Budapest,Caceres,Camden,Fingal,Geneva,Girona,Hamburg,Helsinki,Madrid,Montpellier,Namur,Oslo,Paris,Turin,Vienna,Warsaw,Zagreb
+Fraxinus excelsior,TO CALCULATE,100,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Acer campestre,TO CALCULATE,95.65,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
+Acer pseudoplatanus,TO CALCULATE,95.65,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
+Acer saccharinum,TO CALCULATE,95.65,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
+Aesculus hippocastanum,TO CALCULATE,95.65,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Carpinus betulus,TO CALCULATE,95.65,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Pinus sylvestris,TO CALCULATE,95.65,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1
+Platanus hispanica,TO CALCULATE,95.65,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
+Populus nigra,TO CALCULATE,95.65,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1
+Prunus avium,TO CALCULATE,95.65,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1
+Quercus robur,TO CALCULATE,95.65,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Robinia pseudoacacia,TO CALCULATE,95.65,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
+Tilia cordata,TO CALCULATE,95.65,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Tilia platyphyllos,TO CALCULATE,95.65,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Acer negundo,TO CALCULATE,91.3,1,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1
+Betula pendula,TO CALCULATE,91.3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1
+Corylus colurna,TO CALCULATE,91.3,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1
+Ginkgo biloba,TO CALCULATE,91.3,1,1,1,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1
+Juglans regia,TO CALCULATE,91.3,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1
+Prunus,Can't calculate niches on genus,91.3,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1
+Salix alba,TO CALCULATE,91.3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1
+Sorbus aucuparia,TO CALCULATE,91.3,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1
+Ailanthus altissima,TO CALCULATE,86.96,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,1,1
+Cedrus deodara,TO CALCULATE,86.96,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1
+Fagus sylvatica,TO CALCULATE,86.96,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1
+Fraxinus angustifolia,TO CALCULATE,86.96,1,1,1,1,0,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1
+Fraxinus ornus,TO CALCULATE,86.96,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1
+Gleditsia triacanthos,TO CALCULATE,86.96,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1
+Liquidambar styraciflua,TO CALCULATE,86.96,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1
+Liriodendron tulipifera,TO CALCULATE,86.96,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1
+Populus alba,TO CALCULATE,86.96,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1
+Populus tremula,TO CALCULATE,86.96,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,0,1,1,1,1,1,1
+Prunus cerasifera,TO CALCULATE,86.96,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,1,1,0,1,1,1,1,1
+Quercus petraea,TO CALCULATE,86.96,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,1,1,1,1,1,1
+Chamaecyparis lawsoniana,TO CALCULATE,82.61,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,1,1,0,1,1,1,0,1
+Malus,Can't calculate niches on genus,82.61,0,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,0
+Picea abies,TO CALCULATE,82.61,1,1,1,1,1,1,1,0,1,0,1,1,1,1,1,0,1,0,1,1,1,1,1
+Picea pungens,TO CALCULATE,82.61,1,0,1,1,1,1,1,0,1,0,1,1,1,1,1,1,1,0,1,1,1,1,1
+Pinus nigra,TO CALCULATE,82.61,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,1,1,1,1,1
+Pyrus calleryana,TO CALCULATE,82.61,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,0
+Quercus rubra,TO CALCULATE,82.61,1,1,1,1,1,1,1,0,1,0,1,1,1,0,0,1,1,1,1,1,1,1,1
+Salix babylonica,TO CALCULATE,82.61,1,1,1,1,1,1,1,0,1,0,1,1,1,0,1,1,1,0,1,1,1,1,1
+Taxus baccata,TO CALCULATE,82.61,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,0,1,1
+Tilia europaea,TO CALCULATE,82.61,1,1,0,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1
+Tilia tomentosa,TO CALCULATE,82.61,1,1,1,1,1,1,1,0,1,0,1,1,1,0,0,1,1,1,1,1,1,1,1
+Ulmus,Can't calculate niches on genus,82.61,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0
+Alnus incana,TO CALCULATE,78.26,1,1,1,1,1,1,1,0,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1
+Cercis siliquastrum,TO CALCULATE,78.26,0,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1
+Ilex aquifolium,TO CALCULATE,78.26,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,0,1,1,1,0,1
+Juglans nigra,TO CALCULATE,78.26,1,0,1,1,1,1,1,1,1,0,1,0,1,0,1,1,1,0,1,1,1,1,1
+Koelreuteria paniculata,TO CALCULATE,78.26,1,0,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1
+Morus alba,TO CALCULATE,78.26,0,0,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,1,1
+Prunus serrulata,TO CALCULATE,78.26,1,0,1,1,1,1,1,1,1,1,1,0,1,0,1,1,1,0,1,1,1,0,1
+Ulmus glabra,TO CALCULATE,78.26,0,1,1,0,0,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1
+Acer,Can't calculate niches on genus,73.91,0,1,1,0,1,1,0,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,0
+Acer palmatum,TO CALCULATE,73.91,0,1,1,1,1,1,1,0,1,1,1,1,1,0,0,0,1,0,1,1,1,1,1
+Alnus cordata,TO CALCULATE,73.91,1,1,1,1,1,1,1,0,1,1,1,0,1,0,1,1,1,0,1,0,1,0,1
+Betula pubescens,TO CALCULATE,73.91,1,1,0,0,1,1,1,0,1,0,1,0,1,1,1,0,1,1,1,1,1,1,1
+Castanea sativa,TO CALCULATE,73.91,1,1,1,1,1,1,1,0,1,1,1,0,1,0,1,0,1,0,1,1,1,0,1
+Celtis australis,TO CALCULATE,73.91,0,0,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1
+Fraxinus,Can't calculate niches on genus,73.91,1,1,1,0,0,1,0,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0
+Prunus domestica,TO CALCULATE,73.91,0,0,1,1,1,1,1,1,1,0,1,1,1,0,1,0,1,0,1,1,1,1,1
+Sorbus intermedia,TO CALCULATE,73.91,1,0,1,0,1,1,1,0,1,1,1,0,1,1,0,0,1,1,1,1,1,1,1
+Tilia,Can't calculate niches on genus,73.91,0,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,0
+Aesculus carnea,TO CALCULATE,69.57,1,0,1,1,1,1,1,0,1,0,1,0,1,0,0,0,1,1,1,1,1,1,1
+Cedrus atlantica,TO CALCULATE,69.57,0,1,1,1,0,1,1,0,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1
+Paulownia tomentosa,TO CALCULATE,69.57,0,0,1,1,1,1,1,0,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1
+Quercus,Can't calculate niches on genus,69.57,0,1,1,0,0,1,0,0,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1
+Quercus cerris,TO CALCULATE,69.57,1,1,1,1,1,1,1,1,1,1,1,0,1,0,0,1,1,0,1,0,0,0,1
+Sorbus aria,TO CALCULATE,69.57,1,1,1,0,1,1,1,0,1,1,1,0,1,1,0,0,1,0,1,0,1,1,1
+Abies alba,TO CALCULATE,65.22,0,0,1,1,1,0,1,0,1,0,1,1,1,0,1,0,1,0,1,1,1,1,1
+Betula,Can't calculate niches on genus,65.22,1,1,0,0,0,1,0,0,1,1,1,1,1,1,1,0,1,1,1,0,1,1,0
+Crataegus laevigata,TO CALCULATE,65.22,1,0,0,1,1,1,1,0,1,1,1,0,1,0,1,0,0,1,1,0,1,1,1
+Cupressus arizonica,TO CALCULATE,65.22,0,0,1,1,1,1,1,1,1,0,1,1,0,0,1,1,0,0,1,1,1,0,1
+Cupressus leylandii,TO CALCULATE,65.22,0,1,1,0,1,1,1,1,0,1,1,1,0,0,1,1,0,0,1,1,1,0,1
+Cupressus sempervirens,TO CALCULATE,65.22,0,0,1,1,1,1,1,1,1,0,1,1,0,0,1,1,0,0,1,1,1,0,1
+Larix decidua,TO CALCULATE,65.22,0,1,0,1,1,1,1,0,1,0,1,0,1,0,1,0,1,0,1,1,1,1,1
+Platanus orientalis,TO CALCULATE,65.22,0,1,1,1,1,1,1,1,1,0,1,0,1,0,0,1,1,0,1,1,1,0,0
+Populus,Can't calculate niches on genus,65.22,0,1,1,1,0,1,1,0,0,1,1,0,1,1,1,1,0,0,1,1,1,1,0
+Pseudotsuga menziesii,TO CALCULATE,65.22,0,1,0,1,1,1,1,0,1,0,1,0,1,1,0,0,1,0,1,1,1,1,1
+Pterocarya fraxinifolia,TO CALCULATE,65.22,1,0,1,1,1,1,0,0,1,0,1,1,1,1,0,1,1,0,1,0,1,0,1
+Pyrus communis,TO CALCULATE,65.22,1,1,1,0,1,1,1,0,1,0,1,1,1,0,1,0,1,0,1,1,0,0,1
+Quercus ilex,TO CALCULATE,65.22,0,0,1,1,1,1,0,1,1,1,1,1,1,0,1,1,0,0,1,1,1,0,0
+Salix caprea,TO CALCULATE,65.22,1,1,0,0,1,1,1,0,1,1,1,0,1,1,0,0,1,0,1,0,1,1,1
+Sambucus nigra,TO CALCULATE,65.22,0,1,1,1,1,1,1,0,1,1,1,0,0,0,0,0,1,0,1,1,1,1,1
+Sequoiadendron giganteum,TO CALCULATE,65.22,0,1,0,1,1,1,0,1,1,0,1,0,1,0,1,1,1,0,1,1,1,0,1
+Thuja plicata,TO CALCULATE,65.22,1,1,1,1,1,1,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1,1,1
+Corylus avellana,TO CALCULATE,60.87,0,1,1,0,1,1,1,0,1,0,1,1,1,1,1,1,0,0,1,1,0,0,0
+Ficus carica,TO CALCULATE,60.87,0,0,1,1,1,1,1,1,1,0,1,1,0,0,1,1,0,0,1,1,1,0,0
+Fraxinus americana,TO CALCULATE,60.87,0,0,1,1,1,1,1,0,1,0,1,0,1,0,1,0,1,0,1,1,1,0,1
+Laburnum anagyroides,TO CALCULATE,60.87,1,1,1,0,1,1,1,1,1,0,1,1,1,0,0,0,0,0,1,0,1,0,1
+Malus floribunda,TO CALCULATE,60.87,1,0,1,1,0,1,0,1,1,1,1,0,1,0,1,0,1,0,1,1,1,0,0
+Morus nigra,TO CALCULATE,60.87,0,0,1,1,0,1,1,0,1,0,1,1,1,0,1,0,1,0,1,1,1,0,1
+Ostrya carpinifolia,TO CALCULATE,60.87,0,0,1,1,1,1,1,0,1,0,1,0,1,0,0,1,1,0,1,1,1,0,1
+Pinus strobus,TO CALCULATE,60.87,1,0,1,1,1,1,1,0,1,0,1,0,1,0,0,0,1,0,1,1,0,1,1
+Prunus cerasus,TO CALCULATE,60.87,0,0,1,1,1,1,1,0,0,0,1,0,1,1,1,1,0,0,1,0,1,1,1
+Prunus padus,TO CALCULATE,60.87,0,1,1,0,1,1,1,0,1,0,1,0,1,1,1,0,1,0,1,0,0,1,1
+Pyrus,Can't calculate niches on genus,60.87,1,1,1,0,0,1,0,0,1,1,1,0,1,0,1,0,1,1,1,0,1,1,0
+Sorbus,Can't calculate niches on genus,60.87,0,1,0,1,1,1,1,0,1,1,1,0,1,1,0,0,0,1,1,0,1,1,0
+Taxodium distichum,TO CALCULATE,60.87,1,0,1,1,1,1,0,0,1,0,1,0,1,0,0,1,1,0,1,1,1,0,1
+Thuja occidentalis,TO CALCULATE,60.87,0,0,1,1,0,1,1,0,0,0,1,0,1,0,1,1,1,0,1,1,1,1,1
+Tilia euchlora,TO CALCULATE,60.87,1,1,1,1,0,1,1,0,1,1,1,0,1,0,0,1,1,0,0,0,1,0,1
+Acer rubrum,TO CALCULATE,56.52,0,1,1,1,1,1,1,0,1,0,1,0,1,0,0,0,1,0,1,1,1,0,0
+Broussonetia papyrifera,TO CALCULATE,56.52,0,0,1,0,1,1,1,0,1,0,1,1,0,0,1,1,0,0,1,1,1,0,1
+Calocedrus decurrens,TO CALCULATE,56.52,0,0,1,1,1,1,0,0,0,0,1,1,1,0,1,0,1,0,1,1,1,0,1
+Cedrus libani,TO CALCULATE,56.52,0,1,1,1,1,1,0,0,1,0,1,0,0,0,1,0,1,0,1,1,1,0,1
+Cornus mas,TO CALCULATE,56.52,0,0,1,1,1,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1
+Crataegus lavallei,TO CALCULATE,56.52,1,0,1,1,0,1,1,0,1,0,1,0,1,0,0,0,1,0,1,1,1,0,1
+Malus domestica,TO CALCULATE,56.52,0,0,1,0,1,1,1,0,1,0,1,1,1,1,0,0,0,0,1,1,0,1,1
+Malus sylvestris,TO CALCULATE,56.52,1,0,1,0,1,1,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1,1,1
+Parrotia persica,TO CALCULATE,56.52,0,0,1,1,1,1,1,0,1,0,1,0,1,0,0,0,1,0,1,1,1,0,1
+Populus canescens,TO CALCULATE,56.52,1,0,1,1,0,1,1,0,0,0,1,0,1,0,0,0,1,1,1,1,1,0,1
+Prunus armeniaca,TO CALCULATE,56.52,0,0,1,1,1,0,1,0,1,0,1,1,0,0,1,1,0,0,1,1,1,0,1
+Prunus dulcis,TO CALCULATE,56.52,0,0,1,1,1,1,1,0,1,0,1,1,0,0,1,1,0,0,1,0,1,0,1
+Quercus palustris,TO CALCULATE,56.52,1,1,1,1,1,1,0,0,1,0,1,0,1,1,0,0,1,0,1,0,0,0,1
+Salix,Can't calculate niches on genus,56.52,0,1,1,0,1,1,0,0,1,1,1,0,1,1,1,0,1,0,1,0,0,1,0
+Sequoia sempervirens,TO CALCULATE,56.52,0,0,1,1,1,1,0,1,1,0,1,0,1,0,0,1,1,0,1,1,0,0,1
+Sorbus torminalis,TO CALCULATE,56.52,0,0,1,1,1,1,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1,1,1
+Abies pinsapo,TO CALCULATE,52.17,0,0,1,1,1,0,1,1,0,0,1,0,1,0,1,1,0,0,1,0,1,0,1
+Acer tataricum,TO CALCULATE,52.17,0,0,1,1,1,0,1,0,1,0,1,0,1,1,0,0,0,0,1,0,1,1,1
+Albizia julibrissin,TO CALCULATE,52.17,0,0,1,1,1,0,1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0,1
+Betula utilis,TO CALCULATE,52.17,1,1,0,0,1,1,1,0,1,1,1,0,1,0,0,0,0,0,1,0,1,1,0
+Celtis occidentalis,TO CALCULATE,52.17,0,0,0,0,1,0,1,0,1,0,1,1,1,0,0,1,1,0,1,1,1,0,1
+Crataegus,Can't calculate niches on genus,52.17,0,1,1,0,0,1,0,0,1,1,0,0,1,1,0,0,1,0,1,1,0,1,1
+Elaeagnus angustifolia,TO CALCULATE,52.17,0,0,1,0,1,0,1,1,1,0,1,0,1,0,1,1,0,0,1,0,0,1,1
+Ligustrum lucidum,TO CALCULATE,52.17,0,0,1,1,1,1,0,1,1,0,1,1,0,0,1,1,0,0,1,1,0,0,0
+Pinus,Can't calculate niches on genus,52.17,0,0,0,0,1,1,0,0,0,0,1,0,1,1,1,1,1,0,1,1,1,1,0
+Pinus pinea,TO CALCULATE,52.17,0,0,1,1,1,1,0,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0,1
+Prunus sargentii,TO CALCULATE,52.17,0,0,1,1,1,1,0,0,1,0,1,1,1,1,0,0,0,0,1,1,1,0,0
+Quercus pubescens,TO CALCULATE,52.17,0,0,1,1,1,0,0,0,0,0,1,1,1,0,1,1,0,0,1,1,1,0,1
+Salix fragilis,TO CALCULATE,52.17,0,1,1,0,0,1,1,0,1,1,1,0,1,1,0,0,0,0,0,0,1,1,1
+Tilia americana,TO CALCULATE,52.17,0,0,1,1,1,1,1,0,1,0,1,0,1,0,0,1,1,0,1,0,1,0,0
+Ulmus pumila,TO CALCULATE,52.17,0,0,1,1,1,0,1,1,0,0,1,1,0,0,1,0,0,0,1,1,1,0,1
+Acacia dealbata,TO CALCULATE,47.83,0,0,1,1,1,0,0,1,1,0,1,1,0,0,1,1,0,0,1,1,0,0,0
+Acer cappadocicum,TO CALCULATE,47.83,0,1,0,0,1,1,1,0,1,0,1,0,1,0,0,0,1,0,1,1,1,0,0
+Amelanchier lamarckii,TO CALCULATE,47.83,1,1,1,0,1,1,0,0,1,1,1,0,1,0,0,0,0,0,1,0,1,0,0
+Arbutus unedo,TO CALCULATE,47.83,0,0,1,1,1,1,0,0,1,0,1,1,0,0,1,1,0,0,1,1,0,0,0
+Betula papyrifera,TO CALCULATE,47.83,1,1,0,0,0,1,0,0,1,1,1,0,1,0,0,0,1,0,1,0,1,0,1
+Cercidiphyllum japonicum,TO CALCULATE,47.83,1,0,0,0,1,1,0,0,0,0,1,0,1,1,0,0,1,0,1,1,1,0,1
+Cydonia oblonga,TO CALCULATE,47.83,0,0,1,0,1,0,1,1,0,0,1,0,0,0,1,0,1,0,1,1,1,0,1
+Hibiscus syriacus,TO CALCULATE,47.83,0,0,1,1,0,0,1,1,1,0,1,1,0,0,1,0,0,0,1,1,1,0,0
+Lagerstroemia indica,TO CALCULATE,47.83,0,0,1,1,1,0,0,1,1,0,1,1,0,0,1,1,0,0,1,1,0,0,0
+Maclura pomifera,TO CALCULATE,47.83,0,0,1,1,1,0,1,0,0,0,1,0,0,0,0,1,1,0,1,1,1,0,1
+Metasequoia glyptostroboides,TO CALCULATE,47.83,0,1,0,1,1,1,0,0,1,0,1,0,1,0,0,0,1,0,1,1,1,0,0
+Olea europaea,TO CALCULATE,47.83,0,0,1,1,1,0,0,1,1,0,1,1,0,0,1,1,0,0,1,1,0,0,0
+Picea omorika,TO CALCULATE,47.83,0,0,0,1,0,1,0,0,0,0,1,0,1,1,0,0,1,0,1,1,1,1,1
+Pinus wallichiana,TO CALCULATE,47.83,0,0,1,1,0,1,1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,0,1
+Platycladus orientalis,TO CALCULATE,47.83,0,0,0,1,1,1,1,1,0,0,1,0,0,0,1,0,0,0,1,1,1,0,1
+Populus canadensis,TO CALCULATE,47.83,1,0,1,0,1,1,1,0,0,0,1,0,0,0,1,0,1,0,1,0,1,1,0
+Populus simonii,TO CALCULATE,47.83,0,0,0,1,1,0,1,0,0,0,1,1,1,0,1,0,0,0,1,0,1,1,1
+Prunus laurocerasus,TO CALCULATE,47.83,0,0,1,1,1,1,1,0,1,1,1,0,0,0,1,0,0,0,1,1,0,0,0
+Prunus persica,TO CALCULATE,47.83,0,0,1,0,1,0,1,0,0,0,1,1,1,0,1,0,0,0,1,1,1,0,1
+Prunus subhirtella,TO CALCULATE,47.83,0,0,1,1,1,1,1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,0,0
+Sorbus thuringiaca,TO CALCULATE,47.83,1,1,1,0,0,1,1,0,1,1,0,0,1,0,0,0,1,0,1,0,1,0,0
+Ulmus laevis,TO CALCULATE,47.83,0,0,1,1,1,0,1,0,0,0,1,0,1,1,0,0,0,0,0,1,1,1,1
+Zelkova serrata,TO CALCULATE,47.83,0,0,1,1,1,1,0,0,1,0,1,1,1,0,0,0,1,0,1,0,1,0,0
+Acer monspessulanum,TO CALCULATE,43.48,0,0,1,1,1,0,1,0,0,0,1,0,1,0,0,1,0,0,1,0,1,0,1
+Aesculus,Can't calculate niches on genus,43.48,0,1,0,0,0,1,0,0,0,0,1,0,1,1,0,1,1,0,1,0,1,1,0
+Alnus spaethii,TO CALCULATE,43.48,1,0,0,1,1,0,1,0,1,0,1,0,1,0,0,0,0,1,1,0,1,0,0
+Cupressus macrocarpa,TO CALCULATE,43.48,0,1,1,0,0,1,0,0,1,1,1,1,0,0,1,1,0,0,1,0,0,0,0
+Eriobotrya japonica,TO CALCULATE,43.48,0,0,1,1,1,0,0,0,1,0,1,1,0,0,1,1,0,0,1,1,0,0,0
+Fraxinus pennsylvanica,TO CALCULATE,43.48,0,0,0,0,1,1,1,0,0,0,1,0,1,1,0,0,1,0,1,0,1,1,0
+Picea,Can't calculate niches on genus,43.48,0,0,0,0,0,1,0,0,1,0,1,0,1,1,1,0,1,0,1,0,1,1,0
+Pinus pinaster,TO CALCULATE,43.48,0,0,1,1,1,1,0,1,0,0,1,1,0,0,1,0,1,0,1,0,0,0,0
+Quercus frainetto,TO CALCULATE,43.48,0,0,1,1,1,1,0,0,0,0,1,0,1,0,0,0,1,0,1,0,1,0,1
+Quercus suber,TO CALCULATE,43.48,0,0,0,1,1,1,0,1,1,0,1,1,0,0,1,0,0,0,1,1,0,0,0
+Rhus typhina,TO CALCULATE,43.48,0,0,1,0,0,1,1,0,1,0,1,0,1,0,0,0,0,0,1,0,1,1,1
+Thuja,Can't calculate niches on genus,43.48,0,0,0,1,0,0,0,1,0,1,1,0,1,0,1,0,1,0,1,0,1,1,0
+Ulmus hollandica,TO CALCULATE,43.48,1,0,0,0,1,1,0,0,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1
+Acer freemanii,TO CALCULATE,39.13,0,0,1,1,1,1,0,0,1,0,1,1,0,0,0,0,0,0,1,0,1,0,0
+Cephalotaxus harringtonii,TO CALCULATE,39.13,0,1,1,1,0,1,1,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0
+Diospyros kaki,TO CALCULATE,39.13,0,0,1,1,1,0,0,0,0,0,1,1,0,0,1,1,0,0,1,1,0,0,0
+Larix,Can't calculate niches on genus,39.13,0,1,0,0,0,1,0,0,0,0,1,0,1,1,0,0,0,1,1,0,1,1,0
+Melia azedarach,TO CALCULATE,39.13,0,0,1,1,1,0,0,1,0,0,1,1,0,0,1,1,0,0,1,0,0,0,0
+Platanus,Can't calculate niches on genus,39.13,0,1,1,0,0,1,0,0,0,0,1,0,1,0,0,1,0,0,1,0,1,1,0
+Populus deltoides,TO CALCULATE,39.13,0,0,1,0,0,0,0,1,0,0,0,1,1,0,1,0,0,0,1,1,1,0,1
+Prunus serrula,TO CALCULATE,39.13,1,0,0,0,1,1,0,0,1,1,1,0,1,0,0,0,0,1,1,0,0,0,0
+Acer buergerianum,TO CALCULATE,34.78,0,0,0,1,1,0,1,0,0,1,1,0,1,0,0,0,0,0,1,0,1,0,0
+Ligustrum japonicum,TO CALCULATE,34.78,0,0,1,1,1,0,0,1,0,0,1,0,0,0,1,1,0,0,1,0,0,0,0
+Malus purpurea,TO CALCULATE,34.78,0,0,0,0,0,1,1,0,1,0,1,0,1,0,0,0,0,0,1,0,1,0,1
+Morus,Can't calculate niches on genus,34.78,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,1,1,0,1,0,1,1,0
+Pinus halepensis,TO CALCULATE,34.78,0,0,0,1,1,0,0,0,0,0,1,1,0,0,1,1,0,0,1,1,0,0,0
+Pinus mugo,TO CALCULATE,34.78,0,0,1,1,0,1,1,0,0,0,1,0,1,0,0,0,0,0,1,1,0,0,0
+Prunus mahaleb,TO CALCULATE,34.78,0,0,1,0,1,0,1,0,0,0,1,0,1,0,1,0,0,0,1,0,1,0,0
+Punica granatum,TO CALCULATE,34.78,0,0,1,1,0,0,0,1,0,0,1,0,0,0,1,1,0,0,1,1,0,0,0
+Salix salamonii,TO CALCULATE,34.78,1,0,0,0,1,1,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,1,0
+Chamaecyparis,Can't calculate niches on genus,30.43,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,1,0,1,0,1,1,0
+Cupressus,Can't calculate niches on genus,30.43,0,1,0,0,0,1,0,0,1,0,1,0,1,0,1,0,0,0,1,0,0,0,0
+Platanus occidentalis,TO CALCULATE,30.43,0,0,0,0,1,0,1,0,0,0,1,0,1,0,0,0,1,0,1,1,0,0,0
+Prunus lusitanica,TO CALCULATE,30.43,0,0,0,0,1,1,0,0,1,0,1,0,0,0,1,1,0,0,1,0,0,0,0
+Prunus schmittii,TO CALCULATE,30.43,0,1,0,0,0,1,0,0,1,0,1,0,1,0,0,0,0,0,1,0,1,0,0
+Tamarix gallica,TO CALCULATE,30.43,0,0,0,1,1,0,1,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1
+Crataegus persimilis,TO CALCULATE,26.09,1,0,0,1,0,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+Pyrus salicifolia,TO CALCULATE,26.09,0,0,1,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,1,0,1,0,0
+Robinia hispida,TO CALCULATE,26.09,0,0,0,0,0,0,1,1,0,0,1,0,1,0,0,0,0,0,1,0,1,0,0
+Catalpa bungei,TO CALCULATE,21.74,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,1,1,0,0,0
+Celtis sinensis,TO CALCULATE,21.74,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0,1,0,0,1,0,0,0,0
+Crataegus crus-galli,TO CALCULATE,21.74,0,0,0,0,0,1,0,0,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+Malus trilobata,TO CALCULATE,21.74,0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,1,0,1,0,0
+Picea mariana,TO CALCULATE,21.74,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,1,0,0
+Populus berolinensis,TO CALCULATE,21.74,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,1,0,0,1,0
+Toona sinensis,TO CALCULATE,21.74,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,1,0,0
+Pinus heldreichii,TO CALCULATE,17.39,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1,0,1
+Prunus pissardii,TO CALCULATE,17.39,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0
+Tilia dasystyla,TO CALCULATE,17.39,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0
+Tilia flavescens,TO CALCULATE,17.39,1,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Chamaecyparis thyoides,TO CALCULATE,13.04,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1,0,0
+Morus kagayamae,TO CALCULATE,13.04,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0
+Pinus thunbergii,TO CALCULATE,13.04,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0
+Ulmus americana,TO CALCULATE,13.04,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Populus hybrida,TO CALCULATE,8.7,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Prunus cornuta,TO CALCULATE,8.7,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Tilia intermedia,TO CALCULATE,8.7,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Ulmus carpinifolia,TO CALCULATE,8.7,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mixed broadleaf,Can't calculate niches on genus,4.35,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Photinia villosa,TO CALCULATE,4.35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Tilia hybrida,TO CALCULATE,4.35,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
