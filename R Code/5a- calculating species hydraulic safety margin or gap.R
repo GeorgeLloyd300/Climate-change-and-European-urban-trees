@@ -14,17 +14,20 @@ options(scipen = 999)
 
 # read in relevant data :
 
-# this dataset contains 5-95th percentiles
-new.niches<- read.csv("GLOBAL_NICHES_EUROPE_PLANTS.csv")
+## This should be called what it is - EG niche.95
+# this data set contains 5-95th percentiles
+new.niches <- read.csv("GLOBAL_NICHES_EUROPE_PLANTS.csv")
 
-# this dataset contains 2-98th percentiles
-new.niches<- read.csv("EURO_TREES_MAIN_GLOBAL_NICHES_ALL_2.CSV")
+
+## This should be called what it is - EG niche.98
+# this data set contains 2-98th percentiles
+new.niches <- read.csv("EURO_TREES_MAIN_GLOBAL_NICHES_ALL_2.CSV")
 
 # data on each city
-city.data<-read.csv("22.city.data.csv")
+city.data  <- read.csv("22.city.data.csv")
 
-# master dataset
-tidy.subset<-read.csv("tidy.subset.csv")
+# master data set
+tidy.subset < -read.csv("tidy.subset.csv")
 
 
 
@@ -98,7 +101,7 @@ master.niches$city_species <- paste(master.niches$city, master.niches$species, s
 
 ## baseline ##
 ## if outside niche: how many mm below lower limit of niche (q05 or q02)?
-outside<-master.niches %>% filter(within.current == "FALSE") %>% 
+outside <- master.niches %>% filter(within.current == "FALSE") %>% 
   mutate(safety.margin = lower - current)
 
 ## if within niche: how many mm above lower limit of niche (q05 or q02)?
@@ -112,12 +115,12 @@ current              <- c(current$safety.margin[match(master.niches$city_species
 
 ## 2050 ##
 ## if outside niche: how many mm below lower limit of niche (q05 or q02)?
-outside<-master.niches %>% filter(within.2050=="FALSE") %>% 
+outside<-master.niches %>% filter(within.2050 == "FALSE") %>% 
   mutate(safety.margin = lower - n2050 )
 
 
 ## if within niche: how many mm above lower limit of niche (q05 or q02)?
-within<-master.niches %>% filter(within.2050 =="TRUE") %>% 
+within<-master.niches %>% filter(within.2050 == "TRUE") %>% 
   mutate(safety.margin = lower - n2050)
 
 n2050              <- rbind(within, outside)
@@ -127,12 +130,12 @@ n2050              <- c(n2050$safety.margin[match(master.niches$city_species, n2
 
 ## 2070 ##
 ## if outside niche: how many mm below lower limit of niche (q05 or q02)?
-outside<-master.niches %>% filter(within.2070=="FALSE") %>% 
+outside <- master.niches %>% filter(within.2070 == "FALSE") %>% 
   mutate(safety.margin = lower - n2070)
 
 
 ## if within niche: how many mm above lower limit of niche (q05 or q02)?
-within<-master.niches %>% filter(within.2070 =="TRUE") %>% 
+within<-master.niches %>% filter(within.2070 == "TRUE") %>% 
   mutate(safety.margin = lower- n2070)
 
 n2070              <- rbind(within, outside)
@@ -149,42 +152,72 @@ master.niches<-cbind(master.niches, safety.margin.current =current,
 
 
 # ----------------------- 3). add final information on -------------------------------------
+
+
 ## calculate carbon per species per city (DIVIDE BY 1000 TO GET TONNES)
-tidy.2 <- tidy.subset %>% group_by(city.name,new.species) %>%
+tidy.2 <- tidy.subset %>% group_by(city.name, new.species) %>%
   summarise(carbon = sum(carbon)/1000)
+
+
 tidy.2$city_species <- paste(tidy.2$city.name, tidy.2$new.species, sep = "_")
 
-# match to niche dataset
-carbon <- c(tidy.2$carbon[match (master.niches$city_species, tidy.2$city_species)])
+
+## match to niche data set
+carbon        <- c(tidy.2$carbon[match (master.niches$city_species, tidy.2$city_species)])
 master.niches <- cbind(master.niches, carbon = carbon)
 
 master.niches <- master.niches %>% arrange(city_species)
 
 
 ## add koppen zones for each city
-koppen<-c(city.data$Koppen.new[match(master.niches$city, city.data$City)])
+koppen <- c(city.data$Koppen.new[match(master.niches$city, city.data$City)])
 master.niches<-cbind(master.niches, koppen = koppen)
 
+
 ## turn continuous 'safety margins' (mm below, within) into categories for plotting
+master.niches$safety.margin.current.cat <- cut(master.niches$safety.margin.current, 
+                                               
+                                               breaks = c(-70, -10.1, 0, 10.1, 20.1, 30.1, 40),
+                                               labels = c("-10.1 to -66mm", 
+                                                          "0 to -10mm", 
+                                                          "0 to 10mm", 
+                                                          "10.1 to 20mm", 
+                                                          "20.1 to 30mm", 
+                                                          "30.1 to 40mm"))
 
-master.niches$safety.margin.current.cat<-cut(master.niches$safety.margin.current, breaks = c(-70, -10.1, 0, 10.1, 20.1, 30.1, 40),
-                                             labels = c("-10.1 to -66mm", "0 to -10mm", "0 to 10mm", "10.1 to 20mm", "20.1 to 30mm", "30.1 to 40mm"))
+master.niches$safety.margin.2050.cat   <- cut(master.niches$safety.margin.2050, 
+                                              
+                                              breaks = c(-70, -10.1, 0, 10.1, 20.1, 30.1, 40),
+                                              labels = c("-10.1 to -66mm", 
+                                                         "0 to -10mm", 
+                                                         "0 to 10mm", 
+                                                         "10.1 to 20mm", 
+                                                         "20.1 to 30mm", 
+                                                         "30.1 to 40mm"))
 
-master.niches$safety.margin.2050.cat<-cut(master.niches$safety.margin.2050, breaks = c(-70, -10.1, 0, 10.1, 20.1, 30.1, 40),
-                                          labels = c("-10.1 to -66mm", "0 to -10mm", "0 to 10mm", "10.1 to 20mm", "20.1 to 30mm", "30.1 to 40mm"))
+master.niches$safety.margin.2070.cat<-cut(master.niches$safety.margin.2070, 
+                                          
+                                          breaks = c(-70, -10.1, 0, 10.1, 20.1, 30.1, 40),
+                                          labels = c("-10.1 to -66mm", 
+                                                     "0 to -10mm", 
+                                                     "0 to 10mm", 
+                                                     "10.1 to 20mm", 
+                                                     "20.1 to 30mm", 
+                                                     "30.1 to 40mm"))
 
-master.niches$safety.margin.2070.cat<-cut(master.niches$safety.margin.2070, breaks = c(-70, -10.1, 0, 10.1, 20.1, 30.1, 40),
-                                          labels = c("-10.1 to -66mm", "0 to -10mm", "0 to 10mm", "10.1 to 20mm", "20.1 to 30mm", "30.1 to 40mm"))
+## Calculate total carbon for each koppen zone
+total.carbon < -city.data %>% group_by(Koppen.new) %>% 
+  
+  summarise(total.carbon = sum(Total.carbon.tonnes))
 
-# calculate total carbon for each koppen zone
-total.carbon<-city.data%>% group_by(Koppen.new)%>% summarise(total.carbon =sum(Total.carbon.tonnes))
 
-# match to master niches dataset 
-total.carbon<- c(total.carbon$total.carbon[match (master.niches$koppen, total.carbon$Koppen.new)])
+## match to master niches dataset 
+total.carbon <- c(total.carbon$total.carbon[match (master.niches$koppen, total.carbon$Koppen.new)])
 
-# add this matched column to master niches and calculate percentage of total
-master.niches<-master.niches%>% mutate(koppen.carbon = total.carbon)%>%
-  mutate(percentage.carbon = carbon/koppen.carbon*100)
+
+## add this matched column to master niches and calculate percentage of total
+master.niches <- master.niches %>% mutate(koppen.carbon = total.carbon) %>%
+  mutate(percentage.carbon = carbon/koppen.carbon * 100)
 
 
 # save
@@ -192,45 +225,59 @@ write.csv(master.niches, "master.niches.prec.2_98.csv")
 
 
 
- #############################################################################################################################
+######################################## 4). Summarize Niche data #############################################
 
-# creating summary of niche data using master niches created above
-master.niches<-read.csv("master.niches.prec.2_98.csv")
+## creating summary of niche data using master niches created above
+master.niches <- read.csv("master.niches.prec.2_98.csv")
 
 # this is another for loop that calculates the amount of carbon in each category 
 # of safety margin 
 
 # make vector of city names 
-cities<-unique(master.niches$city)
+cities <- unique(master.niches$city)
 
 # make vector of names of safety margin categories (precipitation)
-names<-data.frame(names = c("-10.1 to -66mm", "0 to -10mm", "0 to 10mm", "10.1 to 20mm", "20.1 to 30mm", "30.1 to 40mm"))
+names <- data.frame(names = c("-10.1 to -66mm", 
+                              "0 to -10mm", 
+                              "0 to 10mm", 
+                              "10.1 to 20mm", 
+                              "20.1 to 30mm", 
+                              "30.1 to 40mm"))
+
+
+
 
 #-------------------- current --------------------------------------------------------------------------------
 for(i in 1:nrow(names)) { name <- names$names[i]
 
-b<-master.niches %>% group_by(city) %>%                         # calculate amount carbon in each category in each city
+b <- master.niches %>% group_by(city) %>%                         # calculate amount carbon in each category in each city
   filter(safety.margin.current.cat== name) %>%
   summarise(carbon = sum(carbon, na.rm=T)) 
-b<- c(b$carbon[match (cities, b$city)])                         # match to city names
-b<-as.data.frame(cbind(city= cities, carbon=b,                            
-                       safety.margin = name, time= "current"))  # create new dataset
+
+b <- c(b$carbon[match (cities, b$city)])                          # match to city names
+b <- as.data.frame(cbind(city= cities, carbon=b,                            
+                         safety.margin = name, time= "current"))  # create new dataset
+
 if(i==1) {summary.1<-b} 
 else {summary.1<-rbind(summary.1,b)}}
 summary.1[is.na(summary.1)] <- 0
 
+
 #---------------------  2050  --------------------------------------------------------------------------------
 for(i in 1:nrow(names)) { name <- names$names[i]
 
-b<-master.niches %>% group_by(city) %>%                                   
+b <- master.niches %>% group_by(city)   %>%                                   
   filter(safety.margin.2050.cat== name) %>%
   summarise(carbon = sum(carbon, na.rm=T)) 
-b<- c(b$carbon[match (cities, b$city)])                                   
-b<-as.data.frame(cbind(city= cities, carbon=b,                            
-                       safety.margin = name, time = "2050"))  
+
+b <- c(b$carbon[match (cities, b$city)])                                   
+b <- as.data.frame(cbind(city= cities, carbon=b,                            
+                         safety.margin = name, time = "2050"))  
 if(i==1) {summary.2<-b} 
 else {summary.2<-rbind(summary.2,b)}}
 summary.2[is.na(summary.2)] <- 0
+
+
 
 #---------------------  2070  --------------------------------------------------------------------------------
 for(i in 1:nrow(names)) { name <- names$names[i]
