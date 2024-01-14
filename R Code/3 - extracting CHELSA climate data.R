@@ -12,7 +12,7 @@ library(raster)
 
 #-------------------------------------------------------------------------------------------------------------------
 ## load dataset with info on each city
-city<-read.csv("23.cities.data.csv")
+city <- read.csv("23.cities.data.csv")
 
 # select relevant columns and get coordinates for each city 
 city<-dplyr::select(city, City, Lon, Lat)
@@ -21,7 +21,7 @@ city<-dplyr::select(city, -city.City)
 colnames (city) = c("lon", "lat")
 
 #--------------------------------------------------------------------------------------------------------------------------------
-## read current (1970-2000) worldclim bioclim data from temperature and preciptation rasters
+## read current (1970-2000) worldclim bioclim data from temperature and precipitation rasters
 
 temp<-raster("wc2.1_5m_bio_5.tif")
 precip<-raster("wc2.1_5m_bio_14.tif")

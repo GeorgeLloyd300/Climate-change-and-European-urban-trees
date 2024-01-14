@@ -26,7 +26,11 @@ city.data<-read.csv("22.city.data.csv")
 # master dataset
 tidy.subset<-read.csv("tidy.subset.csv")
 
-# -------------------------create master niches dataset -------------------------------------------
+
+
+
+
+# ------------------------- 1). create master niches data set -------------------------------------------
 
 # this is a for loop that takes each species city combination at each time and calculates 
 # whether or not the city's climate is within the species niche 
@@ -39,33 +43,51 @@ for(i in 1:nrow(city.data)) {
   name <- city.data$City[i]
   
   # get climate in city
-  climate<-(city.data%>% filter(City==name))
-  a<-climate$prec.current 
-  b<-climate$prec.2050
-  c<-climate$prec.2070
+  climate <- (city.data%>% filter(City == name))
+  a <- climate$prec.current 
+  b <- climate$prec.2050
+  c <- climate$prec.2070
+  
   # get list of species in this city
-  city<-filter(tidy.subset, city.name==name)
-  city.sp<-unique(city$new.species)
+  city    <- filter(tidy.subset, city.name == name)
+  city.sp <- unique(city$new.species)
   # subset niche data to get just these species niches
   # add new column showing if species is within its niche in future
   # true = cities precipitation is within species niche range (between p05 and p95 or p02 and p98)
-  city.niches<-
-    new.niches %>% select(searchTaxon, Precip_dry_month_q02 , Precip_dry_month_q98)%>% # this line should be changed when using different threshold (Precip_dry_month_q02 to Precip_dry_month_q05 and Precip_dry_month_q95 to Precip_dry_month_q98) 
-    subset(searchTaxon %in% city.sp) %>% mutate(city = name) %>%
-    rename(species =searchTaxon, lower = Precip_dry_month_q02, upper= Precip_dry_month_q98)%>% # this line should be changed when using different threshold (Precip_dry_month_q02 to Precip_dry_month_q05 and Precip_dry_month_q95 to Precip_dry_month_q98) 
-    mutate(current=a)%>% mutate(n2050=b)%>% mutate(n2070=c)%>%
-    mutate('within.current'= current >= lower)%>%
-    mutate('within.2050'= n2050 >= lower)%>%
+  
+  city.niches <-
+    
+    new.niches %>% select(searchTaxon, 
+                          Precip_dry_month_q02 , 
+                          Precip_dry_month_q98) %>% # this line should be changed when using different threshold (Precip_dry_month_q02 to Precip_dry_month_q05 and Precip_dry_month_q95 to Precip_dry_month_q98) 
+    subset(searchTaxon %in% city.sp) %>% 
+    mutate(city = name) %>%
+    rename(species = searchTaxon, 
+           lower   = Precip_dry_month_q02, 
+           upper   = Precip_dry_month_q98) %>% # this line should be changed when using different threshold (Precip_dry_month_q02 to Precip_dry_month_q05 and Precip_dry_month_q95 to Precip_dry_month_q98) 
+    mutate(current = a) %>% 
+    mutate(n2050   = b) %>% mutate(n2070 = c)  %>%
+    mutate('within.current'= current >= lower) %>%
+    mutate('within.2050'= n2050 >= lower) %>%
     mutate('within.2070'= n2070 >= lower)
   
-  if(i==1) {
+  if(i == 1) {
+    
     master.niches <- city.niches
+    
   } else {
+    
     master.niches<-rbind(master.niches, city.niches)
+    
   }
+  
 }
 
-# -------------------- how far are species outside their niches -------------------------------------
+
+
+
+
+# -------------------- 2). how far are species outside their niches? -------------------------------------
 
 # first make column of city and species so we can match
 master.niches$city_species <- paste(master.niches$city, master.niches$species, sep="_")
@@ -75,49 +97,57 @@ master.niches$city_species <- paste(master.niches$city, master.niches$species, s
 # Then it calculates how far above or below niche that city is and repeats for each time point
 
 ## baseline ##
-#if outside niche: how many mm below lower limit of niche (q05 or q02)?
-outside<-master.niches %>% filter(within.current=="FALSE") %>% 
-  mutate(safety.margin = lower - current)
-# if within niche: how many mm above lower limit of niche (q05 or q02)?
-within<-master.niches %>% filter(within.current =="TRUE") %>% 
+## if outside niche: how many mm below lower limit of niche (q05 or q02)?
+outside<-master.niches %>% filter(within.current == "FALSE") %>% 
   mutate(safety.margin = lower - current)
 
-current<-rbind(within, outside)
-current$city_species <- paste(current$city, current$species, sep="_")
-current<-c(current$safety.margin[match(master.niches$city_species, current$city_species)])
+## if within niche: how many mm above lower limit of niche (q05 or q02)?
+within <- master.niches %>% filter(within.current == "TRUE") %>% 
+  mutate(safety.margin = lower - current)
+
+current              <- rbind(within, outside)
+current$city_species <- paste(current$city, current$species, sep = "_")
+current              <- c(current$safety.margin[match(master.niches$city_species, current$city_species)])
+
 
 ## 2050 ##
-#if outside niche: how many mm below lower limit of niche (q05 or q02)?
+## if outside niche: how many mm below lower limit of niche (q05 or q02)?
 outside<-master.niches %>% filter(within.2050=="FALSE") %>% 
   mutate(safety.margin = lower - n2050 )
-# if within niche: how many mm above lower limit of niche (q05 or q02)?
+
+
+## if within niche: how many mm above lower limit of niche (q05 or q02)?
 within<-master.niches %>% filter(within.2050 =="TRUE") %>% 
   mutate(safety.margin = lower - n2050)
 
-n2050<-rbind(within, outside)
+n2050              <- rbind(within, outside)
 n2050$city_species <- paste(n2050$city, n2050$species, sep="_")
-n2050<-c(n2050$safety.margin[match(master.niches$city_species, n2050$city_species)])
+n2050              <- c(n2050$safety.margin[match(master.niches$city_species, n2050$city_species)])
 
 
 ## 2070 ##
-#if outside niche: how many mm below lower limit of niche (q05 or q02)?
+## if outside niche: how many mm below lower limit of niche (q05 or q02)?
 outside<-master.niches %>% filter(within.2070=="FALSE") %>% 
   mutate(safety.margin = lower - n2070)
-# if within niche: how many mm above lower limit of niche (q05 or q02)?
+
+
+## if within niche: how many mm above lower limit of niche (q05 or q02)?
 within<-master.niches %>% filter(within.2070 =="TRUE") %>% 
   mutate(safety.margin = lower- n2070)
 
-n2070<-rbind(within, outside)
+n2070              <- rbind(within, outside)
 n2070$city_species <- paste(n2070$city, n2070$species, sep="_")
 n2070<-c(n2070$safety.margin[match(master.niches$city_species, n2070$city_species)])
 
-# bind the different times together
+## bind the different times together
 master.niches<-cbind(master.niches, safety.margin.current =current,
-                     safety.margin.2050 =n2050,
-                     safety.margin.2070 =n2070)
+                     safety.margin.2050 = n2050,
+                     safety.margin.2070 = n2070)
 
 
-# ----------------------- add final information on -------------------------------------
+
+
+# ----------------------- 3). add final information on -------------------------------------
 # calculate carbon per species per city (DIVIDE BY 1000 TO GET TONNES)
 tidy.2<-tidy.subset%>% group_by(city.name,new.species) %>%
   summarise(carbon= sum(carbon)/1000)
