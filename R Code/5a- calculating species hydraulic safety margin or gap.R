@@ -147,21 +147,23 @@ master.niches<-cbind(master.niches, safety.margin.current =current,
 
 
 
+
 # ----------------------- 3). add final information on -------------------------------------
-# calculate carbon per species per city (DIVIDE BY 1000 TO GET TONNES)
-tidy.2<-tidy.subset%>% group_by(city.name,new.species) %>%
-  summarise(carbon= sum(carbon)/1000)
-tidy.2$city_species<-paste(tidy.2$city.name, tidy.2$new.species, sep ="_")
+## calculate carbon per species per city (DIVIDE BY 1000 TO GET TONNES)
+tidy.2 <- tidy.subset %>% group_by(city.name,new.species) %>%
+  summarise(carbon = sum(carbon)/1000)
+tidy.2$city_species <- paste(tidy.2$city.name, tidy.2$new.species, sep = "_")
 
 # match to niche dataset
-carbon<- c(tidy.2$carbon[match (master.niches$city_species, tidy.2$city_species)])
-master.niches<-cbind(master.niches, carbon = carbon)
+carbon <- c(tidy.2$carbon[match (master.niches$city_species, tidy.2$city_species)])
+master.niches <- cbind(master.niches, carbon = carbon)
 
-master.niches<-master.niches%>%arrange(city_species)
+master.niches <- master.niches %>% arrange(city_species)
 
-# add koppen zones for each city
+
+## add koppen zones for each city
 koppen<-c(city.data$Koppen.new[match(master.niches$city, city.data$City)])
-master.niches<-cbind(master.niches, koppen=koppen)
+master.niches<-cbind(master.niches, koppen = koppen)
 
 ## turn continuous 'safety margins' (mm below, within) into categories for plotting
 
