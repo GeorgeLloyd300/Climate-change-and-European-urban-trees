@@ -6,7 +6,7 @@
 
 # \ 
 # 
-# This code prepares all the data for the CHR assessment, and runs the analyses \
+# This code prepares all the tree inventory data, runs all calculations and produces results/figures  \
 #   
 # \
 
@@ -48,7 +48,7 @@ run_stats    <- TRUE
 # 1 :: LOAD DATA ----
 
 
-## These scripts set the environments, reads in all the raster and feature data, etc. 
+## These scripts set the environments, reads in all the inventory and climate data and calculates carbon storage
 source('./R/1_create_master_City_dataset.R')
 source('./R/2 - calculating carbon storage.R')
 source('./R/3 - extracting CHELSA climate data.R')
