@@ -29,7 +29,7 @@ ipak(sdmgen_packages)
 
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------
-# creating master dataset 1 
+# creating master dataset 1. 
 # the master dataset is saved as different versions in case it is necessary to go back too previous version)
 
 # this section reads in raw data from each city, tidies it up and combines it into one dataset 
