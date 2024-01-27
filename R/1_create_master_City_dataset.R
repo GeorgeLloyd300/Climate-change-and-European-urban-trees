@@ -11,21 +11,6 @@
 
 
 ## Function to load or install packages
-ipak  <-  function(pkg){
-  new.pkg  <-  pkg[!(pkg %in% installed.packages()[, "Package"])]
-  if (length(new.pkg))
-    install.packages(new.pkg, dependencies = TRUE, repos="https://cran.csiro.au/")
-  sapply(pkg, require, character.only = TRUE)
-}
-
-
-## Install Main package, if needed
-# devtools::install_github("HMB3/habitatIntersect")
-
-
-## Load packages 
-library(habitatIntersect)
-ipak(sdmgen_packages)
 
 # load necessary packages 
 # library(tidyverse)
