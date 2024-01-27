@@ -59,8 +59,7 @@ source('./R/3 - extracting CHELSA climate data.R')
 # 2 :: CALCULATE NICHES  ---- 
 
 
-## These scripts calculate the hydro-logical components and likely 
-## impacts of harvest options
+## These scripts calculate the climate niche position of all species within each city at different time points 
 if(calc_niche) {
   
   source('./R/4 - Calculate tree species niches.R')
