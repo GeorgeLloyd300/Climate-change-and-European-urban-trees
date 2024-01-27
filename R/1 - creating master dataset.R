@@ -239,7 +239,8 @@ budapest.unique.sp <- as.data.frame(unique(city$species))
 
 
 # run taxonstand on these 
-budapest.taxonstand <-  Taxonstand::TPL(budapest.unique.sp$`unique(city$species)`, infra = TRUE, corr = TRUE, repeats = 100)  # this takes 5' on my compute
+budapest.taxonstand <-  Taxonstand::TPL(budapest.unique.sp$`unique(city$species)`, 
+                                        infra = TRUE, corr = TRUE, repeats = 100)  # this takes 5' on my compute
 
 
 # merge newgenus and newspecies cols
