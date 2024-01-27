@@ -4,7 +4,7 @@
 
 
 
-# Compiling data from all 21 cities into one dataset
+# Compiling data from all 22 cities into one dataset
 # date = Jan - Feb 2021 
 # Author = George Lloyd, University of Sheffield
 
