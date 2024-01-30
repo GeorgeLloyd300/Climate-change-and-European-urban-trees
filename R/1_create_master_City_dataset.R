@@ -20,12 +20,14 @@
 
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------
-# creating master dataset 1 
-# the master dataset is saved as different versions in case it is necessary to go back too previous version)
 
-# this section reads in raw data from each city, tidies it up and combines it into one dataset 
-# city data provided in github has already been tidied using this method so only need be combined into one dataset (skip to line 189)
-city <- read.csv("./Data/Inventory/Budapest.csv")
+# this first section reads in raw data from each city, tidies it up and saves it
+# this is an example how it was done for one city (Budapest) but as you need to manually repeat it for each city it takes ages...
+# therefore a folder of already tidied inventory data is provided at "./Data/Tidy inventory data" which allows the user to skip to line 262
+
+
+# import the raw inventory data for a city
+city <- read.csv("./Data/Raw inventory data/Budapest.csv")
 
 
 # select relevant columns and add city.name
@@ -260,54 +262,44 @@ write.csv(city, ("Budapest.tidy.csv"))
 
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# When all are done, bind cities together to create master dataset 1
+# Creating master dataset 1 - simply tidied city data added together 
+# When all inventories are tidied (you can find tidied inventory data at https://drive.google.com/drive/folders/15gT8xcDCiI0B11qZ9hvwK2KmtturCLYG?usp=drive_link
+# skipping the long manual process above)...
+# bind them together to create master dataset 1
 
-assen    <- read.csv("Assen.tidy.csv")
-belfast  <- read.csv("Belfast.tidy.csv")
-bologna  <- read.csv("Bologna.tidy.csv")
-bordeaux <- read.csv("Bordeaux.tidy.csv")
-bristol  <- read.csv("Bristol.tidy.csv")
-caceres  <- read.csv("Caceres.tidy.csv")
-camden  <- read.csv("Camden.tidy.csv")
-fingal.county  <- read.csv("Fingal county.tidy.csv")
-geneva <- read.csv("Geneva.tidy.csv")
-girona <- read.csv("Girona.tidy.csv")
-hamburg <- read.csv("Hamburg.tidy.csv")
-helsinki <- read.csv("Helsinki.tidy.csv")
-montpellier <- read.csv("Montpellier.tidy.csv")
-namur <- read.csv("Namur.tidy.csv")
-oslo <- read.csv("Oslo.tidy.csv")
-paris <- read.csv("Paris.tidy.csv")
-turin <- read.csv("Turin.tidy.csv")
-vienna <- read.csv("Vienna.tidy.csv")
-warsaw <- read.csv("Warsaw.tidy.csv")
+assen    <- read.csv("Outputs/Tidy inventory data/Assen.tidy.csv")
+belfast  <- read.csv("Outputs/Tidy inventory data/Belfast.tidy.csv")
+bologna  <- read.csv("Outputs/Tidy inventory data/Bologna.tidy.csv")
+bordeaux <- read.csv("Outputs/Tidy inventory data/Bordeaux.tidy.csv")
+bristol  <- read.csv("Outputs/Tidy inventory data/Bristol.tidy.csv")
+caceres  <- read.csv("Outputs/Tidy inventory data/Caceres.tidy.csv")
+camden  <- read.csv("Outputs/Tidy inventory data/Camden.tidy.csv")
+fingal.county  <- read.csv("Outputs/Tidy inventory data/Fingal county.tidy.csv")
+geneva <- read.csv("Outputs/Tidy inventory data/Geneva.tidy.csv")
+girona <- read.csv("Outputs/Tidy inventory data/Girona.tidy.csv")
+hamburg <- read.csv("Outputs/Tidy inventory data/Hamburg.tidy.csv")
+helsinki <- read.csv("Outputs/Tidy inventory data/Helsinki.tidy.csv")
+montpellier <- read.csv("Outputs/Tidy inventory data/Montpellier.tidy.csv")
+namur <- read.csv("Outputs/Tidy inventory data/Namur.tidy.csv")
+oslo <- read.csv("Outputs/Tidy inventory data/Oslo.tidy.csv")
+paris <- read.csv("Outputs/Tidy inventory data/Paris.tidy.csv")
+turin <- read.csv("Outputs/Tidy inventory data/Turin.tidy.csv")
+vienna <- read.csv("Outputs/Tidy inventory data/Vienna.tidy.csv")
+warsaw <- read.csv("Outputs/Tidy inventory data/Warsaw.tidy.csv")
 
 # bind datasets
-master <-  rbind(assen, belfast, bologna, bordeaux, bristol, caceres, 
+master_1 <-  rbind(assen, belfast, bologna, bordeaux, bristol, caceres, 
                camden, fingal.county, geneva, girona, hamburg, helsinki,
                montpellier, namur, oslo, paris, turin, vienna, warsaw)
 
 
-# bind additional datasets I get later on
-master_1 <- rbind(master_1, city)
-
-
-# save this master dataset
-save(master_1, file = "./Output/master_1.Rdata", compress = F)
-
-
-# master dataset 1 is simply tidied city data added together 
-
-
-
-
 
 #-------------------------------------------------------------------------------------
-# Creating master dataset 2 - further tidying 
+# Creating master dataset 2 - further tidying of inventory data
 
 # remove rows with blanks or NA's in species or diameter columns 
 # (these are both essential fields which need data)
-master_2  <-  master_2  %>%
+master_2  <-  master_1  %>%
   subset(diameter!="NA")  %>%
   subset(diameter!="0")  %>%
   subset(diameter!="No Code Allocated")  %>%
@@ -389,13 +381,9 @@ master_2$diameter  <-  as.numeric(master_2$diameter)
 master_2$height  <-  as.numeric(master_2$height)
 
 
-# save master 2
-save(master_2, file = "master_2.Rdata", compress = F)
-
-
 #--------------------------------------------------------------------------------------
 # make master dataset 3 
-# Removing species occuring less than 250 times so we can reduce the size of dataset
+# Removing species occuring less than 250 times so we can reduce the size of the master dataset
 
 # first find total no. of each species 
 no.trees <- master_2 %>% group_by(new.species) %>% summarize(freq =(n()))
@@ -413,20 +401,12 @@ remove_these <- as.vector(less_250$new.species)
 master_3 <- anti_join(master_2, less_250, by = "new.species")
 
 
-# save master 3
-save(master_3, file = "master_3.Rdata", compress = F)
-
-
-
-
-
 #-------------------------------------------------------------------------------------------------
 # making master 4 - final changes
 
 # remove some palm species that have no equation or dwd (I.E. they arnt TRUE trees)
 master_4 <- master_3 %>%
   subset(!new.species == "Phoenix canariensis")
-
 
 master_4 <- master_4 %>%
   subset(!new.species == "Trachycarpus fortunei")
@@ -468,9 +448,8 @@ master_4 <- master_4 %>%
 master_4 <- rbind(master_4, master_4.no.height)
 
 
-# save master 4
-save(tidy, file = "master_4_TIDY.Rdata", compress = F)
-
+# save master 4 as the final dataset and output of step 1 of this github repo
+save(master_dataset, file = "Outputs/master_dataset.csv", compress = F)
 
 
 ###############################################################################

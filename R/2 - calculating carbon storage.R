@@ -39,40 +39,41 @@ save(equations, file = "230.sp.parameter.appendix.Rdata", compress = F)
  
  
 #----------------------------------------------------------------------------------------------------
- ## add parameter columns onto master_4
+ ## add parameter columns onto master_dataset (created in step 1)
+
+# read in master dataset from step 1
+load(file = "Outputs/master_dataset.csv")
  
-# create parameter columns by matching parameters of each species from the above dataset onto master_4
+# create parameter columns by matching parameters of each species from the above dataset onto master_dataset
  
-a<-as.data.frame( (equations$a[match (master_4$new.species, equations$new.species)]))
+a<-as.data.frame( (equations$a[match (master_datset$new.species, equations$new.species)]))
  colnames(a)=c("a")
  
-b<-as.data.frame( (equations$b[match (master_4$new.species, equations$new.species)]))
+b<-as.data.frame( (equations$b[match (master_dataset$new.species, equations$new.species)]))
  colnames(b)=c("b")
  
-c<-as.data.frame( (equations$c[match (master_4$new.species, equations$new.species)]))
+c<-as.data.frame( (equations$c[match (master_dataset$new.species, equations$new.species)]))
  colnames(c)=c("c")
  
-d<-as.data.frame( (equations$d[match (master_4$new.species, equations$new.species)]))
+d<-as.data.frame( (equations$d[match (master_dataset$new.species, equations$new.species)]))
  colnames(d)=c("d")
  
-e<-as.data.frame( (equations$e[match (master_4$new.species, equations$new.species)]))
+e<-as.data.frame( (equations$e[match (master_dataset$new.species, equations$new.species)]))
  colnames(e)=c("e")
  
-dwd<-as.data.frame( (equations$dry.wood.density[match (master_4$new.species, equations$new.species)]))
+dwd<-as.data.frame( (equations$dry.wood.density[match (master_dataset$new.species, equations$new.species)]))
  colnames(dwd)=c("dwd")
  
  
-# bind these parameter columns to master_4 creating master_5
+# bind these parameter columns to master_dataset creating master_5
 master_5 <- cbind(master_4, a,b,c,d,e,dwd)
 
-# split this datase into species with dbh + height measurements 
+# split this database into species with dbh + height measurements 
 dbh.and.height<-master_5 %>% subset(!is.na(height)) 
  
 # and those with only dbh measurements
 dbh.only<-master_5 %>% subset(is.na(height))
- 
-# save master_5
-save(master_5, file ="master_5.Rdata")
+
 
  
 #----------------------------------------------------------------------------------------------------
@@ -142,12 +143,9 @@ dbh.only.cities<-dbh.only.cities %>%
    subset(!diameter <=1)%>%
    subset (!diameter >=200)
 
-# bind this subset back to master dataset
-tidy<- rbind(subset, dbh.only.cities)
+# bind this subset back to form finished  master_dataset_tidy
+master_dataset_tidy<- rbind(subset, dbh.only.cities)
 
-# save dataset as master_5_tidy
-save(tidy, file = "master_5_TIDY.Rdata", compress = F)
-
-
-
+# save dataset as master_dataset_tidy
+save(master_dataset_tidy, file = "Outputs/master_dataset_tidy.csv", compress = F)
 
