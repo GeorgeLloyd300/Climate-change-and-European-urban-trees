@@ -32,7 +32,7 @@ means<-city%>%group_by(Koppen.new)%>%
             se = sd(Species.richness..Shannon.)/sqrt(length(Species.richness..Shannon.)))
 
 #----------------------------------------------------------------------------------------------------
-# Calculate mean (± one standard error) change in max temp hottest month (baseline to 2070)
+# Calculate mean (Â± one standard error) change in max temp hottest month (baseline to 2070)
 new<-city%>% 
   mutate(temp.percent= (temp.current-temp.2070)/temp.current*100, 
          prec.percent= (prec.current-prec.2070)/prec.current*100,
@@ -60,8 +60,8 @@ df.all.temp<-read.csv("df.all.temp.csv")
 
 # risk of temperature
 temp.risk<-df.all.temp%>% 
-  subset(safety.margin!= "-0.51 to -18°C")%>%
-  subset(safety.margin!= "0 to -0.5°C")%>%
+  subset(safety.margin!= "-0.51 to -18Â°C")%>%
+  subset(safety.margin!= "0 to -0.5Â°C")%>%
   group_by(koppen, time)%>%
   summarise(sum = sum(percentage), se= sum(se))
 
@@ -86,8 +86,8 @@ summary<-read.csv("summary.master.temp.2_98.csv") # 2-98th percentile temp
 # calculate % carbon at risk at each time in each city and koppen climate zone
 
 # temperature
-df<-summary%>% subset(!safety.margin== "-0.51 to -18°C") %>% 
-  subset(!safety.margin=="0 to -0.5°C")%>%
+df<-summary%>% subset(!safety.margin== "-0.51 to -18Â°C") %>% 
+  subset(!safety.margin=="0 to -0.5Â°C")%>%
   group_by(city, time, koppen)%>% 
   summarise(sum= sum(percentage.carbon, na.rm=T),
   se = sd(percentage.carbon, na.rm=T)/sqrt(length(percentage.carbon)))
@@ -111,7 +111,7 @@ climate%>%
   )
 
 #-------------------------------------------------------------------------------------------------------------
-# Calculate the highest carbon storing species in each category of figure 5 (for use in table 1)
+# Calculate the highest carbon storing species in each category of figure 5 (for use in table S2)
 
 # add temp safety margins to prec niche df 
 match<-c(master.niches.temp$safety.margin.2070[match(master.niches.temp$city_species, master.niches.prec$city_species)])
@@ -123,7 +123,7 @@ df<-master.niches.prec%>% filter(koppen == "Temperate oceanic")%>%
   group_by(species)%>% summarise(sum = sum(percentage.carbon))
 
 # then just look at percentage.carbon column to see how much carbon in the highest storing species 
-# and note this down for use in table 1 
+# and note this down for use in table S2 
 
 
 
