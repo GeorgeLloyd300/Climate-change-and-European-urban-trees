@@ -8,15 +8,12 @@
 # date = Jan - Feb 2021 
 # Author = George Lloyd, University of Sheffield
 
-
-
-## Function to load or install packages
-
 # load necessary packages 
-# library(tidyverse)
-# library(Hmisc)
-# library(tinytex)
-# library(Taxonstand)
+library(tidyverse)
+library(Hmisc)
+library(tinytex)
+library(Taxonstand)
+
 
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -255,10 +252,7 @@ city <- mutate(city, new.species = budapest.corrected$new.species)
 
 
 # SAVE TIDY DATA FOR THIS CITY AND MOVE ONTO NEXT CITY
-write.csv(city, ("Budapest.tidy.csv"))
-
-
-
+write.csv(city, ("Outputs/Tidy Inventory data/Budapest.tidy.csv"))
 
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -267,10 +261,19 @@ write.csv(city, ("Budapest.tidy.csv"))
 # skipping the long manual process above)...
 # bind them together to create master dataset 1
 
+
+# at this point over 60% of trees in Oslo were determined to be only genus level binomials so it was removed from this study - genus level equations are far less accurate
+
+df <- list.files(path='Outputs/Tidy inventory data') %>% 
+  lapply(read_csv) %>% 
+  bind_rows
+
 assen    <- read.csv("Outputs/Tidy inventory data/Assen.tidy.csv")
 belfast  <- read.csv("Outputs/Tidy inventory data/Belfast.tidy.csv")
 bologna  <- read.csv("Outputs/Tidy inventory data/Bologna.tidy.csv")
+bolzano <- read.csv("Outputs/Tidy inventory data/Bolzano.tidy.csv")
 bordeaux <- read.csv("Outputs/Tidy inventory data/Bordeaux.tidy.csv")
+budapest <- read.csv("Outputs/Tidy inventory data/Budapest.tidy.csv")
 bristol  <- read.csv("Outputs/Tidy inventory data/Bristol.tidy.csv")
 caceres  <- read.csv("Outputs/Tidy inventory data/Caceres.tidy.csv")
 camden  <- read.csv("Outputs/Tidy inventory data/Camden.tidy.csv")
@@ -278,19 +281,20 @@ fingal.county  <- read.csv("Outputs/Tidy inventory data/Fingal county.tidy.csv")
 geneva <- read.csv("Outputs/Tidy inventory data/Geneva.tidy.csv")
 girona <- read.csv("Outputs/Tidy inventory data/Girona.tidy.csv")
 hamburg <- read.csv("Outputs/Tidy inventory data/Hamburg.tidy.csv")
+madrid <- read.csv("Outputs/Tidy inventory data/Madrid.tidy.csv")
 helsinki <- read.csv("Outputs/Tidy inventory data/Helsinki.tidy.csv")
 montpellier <- read.csv("Outputs/Tidy inventory data/Montpellier.tidy.csv")
 namur <- read.csv("Outputs/Tidy inventory data/Namur.tidy.csv")
-oslo <- read.csv("Outputs/Tidy inventory data/Oslo.tidy.csv")
 paris <- read.csv("Outputs/Tidy inventory data/Paris.tidy.csv")
 turin <- read.csv("Outputs/Tidy inventory data/Turin.tidy.csv")
 vienna <- read.csv("Outputs/Tidy inventory data/Vienna.tidy.csv")
 warsaw <- read.csv("Outputs/Tidy inventory data/Warsaw.tidy.csv")
+zagreb<- read.csv("Outputs/Tidy inventory data/Zagreb.tidy.csv")
 
 # bind datasets
-master_1 <-  rbind(assen, belfast, bologna, bordeaux, bristol, caceres, 
-               camden, fingal.county, geneva, girona, hamburg, helsinki,
-               montpellier, namur, oslo, paris, turin, vienna, warsaw)
+master_1 <-  rbind(assen, belfast, bologna, bolzano, bordeaux, budapest, bristol, caceres, 
+               camden, fingal.county, geneva, girona, hamburg, helsinki, madrid, 
+               helsinki, montpellier, namur, paris, turin, vienna, warsaw, zagreb)
 
 
 
@@ -445,13 +449,14 @@ master_4 <- master_4 %>%
   select(-percentage)
 
 # add back on cities without height
-master_4 <- rbind(master_4, master_4.no.height)
+master_dataset <- rbind(master_4, master_4.no.height)
 
 
-# save master 4 as the final dataset and output of step 1 of this github repo
-save(master_dataset, file = "Outputs/master_dataset.csv", compress = F)
+# save master dataset as the final dataset and output of step 1 of this github repo
+save(master_dataset, file = "Outputs/master_dataset_step1.csv", compress = F)
 
 
 ###############################################################################
 ################################# TBC #########################################
 ###############################################################################
+
