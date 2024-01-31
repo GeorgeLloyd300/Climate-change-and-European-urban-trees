@@ -1,3 +1,7 @@
+###############################################################################
+############################ 3. CLIMATE DATA ##################################
+###############################################################################
+
 # Extracting CHELSA climate data for each city
 # date = March 2021 
 # Author = George Lloyd, University of Sheffield
@@ -12,31 +16,20 @@ library(raster)
 
 #-------------------------------------------------------------------------------------------------------------------
 ## load dataset with info on each city
-city <- read.csv("23.cities.data.csv")
+city <- read.csv("Data/Species city and equation data/22.city.data.csv")
 
 # select relevant columns and get coordinates for each city 
-city<-dplyr::select(city, City, Lon, Lat)
+city<-select(city, City, Longitude, Latitude)
 city <- data.frame(city$City, city$Lon, city$Lat, row.names=city$City)
 city<-dplyr::select(city, -city.City)
 colnames (city) = c("lon", "lat")
 
-#--------------------------------------------------------------------------------------------------------------------------------
-## read current (1970-2000) worldclim bioclim data from temperature and precipitation rasters
-
-temp<-raster("wc2.1_5m_bio_5.tif")
-precip<-raster("wc2.1_5m_bio_14.tif")
-
-# extract info for each city
-city.1<-city
-city.1$temp.hottest.month <- extract(temp, city)
-
-city.2<-city
 
 #--------------------------------------------------------------------------------------------------------------
-##read chelsa data (baseline, 2050, 2070) from folder 
+##read chelsa data (current, 2050, 2070) from folder 
 
 #first import all files in a single folder as a list 
-rastlist <- list.files(pattern='CHELSA', all.files=TRUE, full.names=FALSE)
+rastlist <- list.files(path='Data/Chelsa climate data/current',pattern='CHELSA', full.names=FALSE)
 
 # then convert to raster stack
 allrasters <-stack(rastlist)
