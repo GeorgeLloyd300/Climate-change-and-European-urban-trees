@@ -1,6 +1,10 @@
+###############################################################################
+############################ 7B. MAKE FIG 3 KOPPEN MAP #######################
+###############################################################################
+
 # Create a figure showing each climate zones temperature and precipitation at 
 # baseline, 2050 and 2070
-# date = June 2021 
+# date = June 2023 
 # Author = George Lloyd, University of Sheffield
 
 # load necessary packages
@@ -18,7 +22,7 @@ library(viridis)
 options(scipen=999)
 
 # load relevant data
-city<-read.csv("22.city.data.csv")
+city<-read.csv("Data/Species city and equation data/22.city.data.csv")
 climate<-read.csv("city.tidy.climate.2.csv") # data on each cities climate at different times
 
 

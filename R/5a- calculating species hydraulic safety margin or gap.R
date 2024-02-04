@@ -1,12 +1,10 @@
+###############################################################################
+############################ 5a. CALC HYDRAULIC MARGINS / GAPS #################
+###############################################################################
 
-# Calculating each species thermal and hydraulic safety margin/gap
+# Calculating each species hydraulic safety margin/gap
 # date = March - June 2021 
 # Author = George Lloyd, University of Sheffield
-
-# Niches are calculated using two different scenarios and therefore this script needs to
-# be repeated using the 2 different versions of 'new.niches' seen below
-# 1 - a more conservative estimate using 5-95th percentiles 
-# 2 - a less conservative estimate using 2-98th percentiles
 
 
 # load necessary packages
@@ -15,30 +13,25 @@ options(scipen = 999)
 
 # read in relevant data :
 
-## This should be called what it is - EG niche.95
-# this data set contains 5-95th percentiles
-new.niches <- read.csv("GLOBAL_NICHES_EUROPE_PLANTS.csv")
-
-
-## This should be called what it is - EG niche.98
-# this data set contains 2-98th percentiles
-new.niches <- read.csv("EURO_TREES_MAIN_GLOBAL_NICHES_ALL_2.CSV")
+# this data set contains all species niche data
+new.niches <- read.csv("Outputs/Output step 4/species.niches.csv")
 
 # data on each city
-city.data  <- read.csv("22.city.data.csv")
+city.data  <- read.csv("Data/Species city and equation data/22.city.data.csv")
 
 # master data set
-tidy.subset < -read.csv("tidy.subset.csv")
-
-
-
+Master_dataset <- read.csv("Outputs/Output step 2/master_tidy_step2.csv")
 
 
 # ------------------------- 1). create master niches data set -------------------------------------------
 
+# Niches are calculated using two different scenarios 
+# 1 - a more conservative estimate using 5-95th percentiles 
+# 2 - a less conservative estimate using 2-98th percentiles
+
 # this is a for loop that takes each species city combination at each time and calculates 
 # whether or not the city's climate is within the species niche 
-# the code should be altered slightly when using the 2 different versions of 'new.niches'
+# the code should be altered slightly when using the 2 different 
 # for example, 'Precip_dry_month_q02' and 'Precip_dry_month_q98' below should be changed to 
 # 'Precip_dry_month_q05' and 'Precip_dry_month_q95'
 
@@ -55,6 +48,7 @@ for(i in 1:nrow(city.data)) {
   # get list of species in this city
   city    <- filter(tidy.subset, city.name == name)
   city.sp <- unique(city$new.species)
+  
   # subset niche data to get just these species niches
   # add new column showing if species is within its niche in future
   # true = cities precipitation is within species niche range (between p05 and p95 or p02 and p98)
@@ -222,7 +216,7 @@ master.niches <- master.niches %>% mutate(koppen.carbon = total.carbon) %>%
 
 
 # save
-write.csv(master.niches, "master.niches.prec.2_98.csv")
+write.csv(master.niches, "Outputs/Output step5/master.niches.prec.2_98.csv")
 
 
 
@@ -232,7 +226,7 @@ write.csv(master.niches, "master.niches.prec.2_98.csv")
 master.niches <- read.csv("master.niches.prec.2_98.csv")
 
 # this is another for loop that calculates the amount of carbon in each category 
-# of safety margin 
+# of safety margin / gap
 
 # make vector of city names 
 cities <- unique(master.niches$city)
@@ -321,8 +315,8 @@ koppen<-c(city.data$Koppen.new[match(summary$city,city.data$City)])
 summary<-cbind(summary, koppen)
 
 # save datasets
-write.csv(summary, "summary.master.prec.5_95.csv")
-write.csv(summary, "summary.master.prec.2_98.csv") 
+write.csv(summary, "Outputs/Output step5/summary.master.prec.5_95.csv")
+write.csv(summary, "Outputs/Output step5/summary.master.prec.2_98.csv") 
 
 
 

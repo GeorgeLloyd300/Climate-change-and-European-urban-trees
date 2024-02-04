@@ -1,3 +1,7 @@
+###############################################################################
+############################ 7A. MAKE FIG 1 KOPPEN MAP ########################
+###############################################################################
+
 # Create a map of Europe with koppen zones overlaid with all study cities 
 # date = June 2021 
 # Author = George Lloyd, University of Sheffield
@@ -17,7 +21,7 @@ library(tiff)
 #---------------------------- IMPORT AND EDIT CITY DATA --------------------------------------------
 
 # get data on lon lat of each city
-city<-read.csv("22.city.data.csv")
+city<-read.csv("Data/Species city and equation data/22.city.data.csv")
 
 # seperate df into climate zones - so we can label points different shapes
 a<-subset(city, Koppen.new =="Temperate oceanic")

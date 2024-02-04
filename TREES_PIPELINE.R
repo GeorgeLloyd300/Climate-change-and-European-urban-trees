@@ -12,19 +12,6 @@
 
 
 
-## To-do ----
-
-## Spatial and conceptual coupling of consequence and likelihood - rules come from different part 
-## of likelihood uniqueness - .
-
-
-## Re-format HEVAE Risk and Threatened species tables
-## Check flow metrics
-## Check all feature data 
-## Check all decision points
-## Integrate LUT with processing code : which variables will users change?
-
-
 ## Clear environment
 rm(list = ls())
 options(warn = 0)
@@ -48,8 +35,8 @@ run_stats    <- TRUE
 # 1 :: LOAD DATA ----
 
 
-## These scripts set the environments, reads in all the inventory and climate data and calculates carbon storage
-source('./R/1_create_master_City_dataset.R')
+## These scripts read in and tidy all the inventory data, extract climate data and calculates carbon storage
+source('./R/1 - create master dataset.R')
 source('./R/2 - calculating carbon storage.R')
 source('./R/3 - extracting CHELSA climate data.R')
 
@@ -59,7 +46,7 @@ source('./R/3 - extracting CHELSA climate data.R')
 # 2 :: CALCULATE NICHES  ---- 
 
 
-## These scripts calculate the climate niche position of all species within each city at different time points 
+## This script calculates the climate niche position of all species within each city at different time points 
 if(calc_niche) {
   
   source('./R/4 - Calculate tree species niches.R')
@@ -71,11 +58,15 @@ if(calc_niche) {
 # 3 :: CALCULATE SAFETY MARGINS ---- 
 
 
+## These scripts calculate a species safety margin or gap at different time points in each city and also 
+## carries out other necessary calculations
+
 if(calc_safety) {
   
   source('./R/5a- calculating species hydraulic safety margin or gap.R')
   source('./R/5b - calculating species thermal safety margin or gap.R')
-  source('./R/6 - other calculations.R')
+  source('./R/6a - other calculations.R')
+  source('./R/6b - other calculations continued.R')
   
 }
 
@@ -83,14 +74,16 @@ if(calc_safety) {
 # 4 :: CREATE RESULTS FIGS AND TABLES ---- 
 
 
-## These scripts calculate the consequence measures for each Decision Criteria
-## They are split up by length - some DC's are too big to combine in one script...
+## These scripts create all figures 
 if(figures) {
   
   ## 
   source('./R/7a - make figure 1 (koppen map).R') ## Create Figure 1). for the publication
-  source('./R/7b - make figure 3 (climate graph).R') ## Create Figure 1). for the publication
-  ## ETC 
+  source('./R/7b - make figure 2 (climate graph).R') ## Create Figure 1). for the publication
+  source('./R/7c - make figure 3 (climate graph).R') ## Create Figure 1). for the publication
+  source('./R/7d - make figure 4 (climate graph).R') ## Create Figure 1). for the publication
+  
+  
 
 }
 
@@ -98,6 +91,8 @@ if(figures) {
 
 
 # 5 :: RUN STAT MODEL ---- 
+
+## These scripts create a dataset and then run a GLMER on it
 
 if(run_stats) {
   
@@ -114,9 +109,3 @@ source('./R/8 - statistical analysis (binomial GLM).R')
 ## Eg thematic feature layer maps of thermal margins, etc?
 
 
-
-
-
-######################################################################################
-###########################  ------ CHR RIGHTS ANALYSIS ---- #########################
-######################################################################################

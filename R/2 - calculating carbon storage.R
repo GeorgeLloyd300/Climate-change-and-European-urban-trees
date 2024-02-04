@@ -1,4 +1,9 @@
-# Calculating carbon stored in each tree within the master dataset
+###############################################################################
+##################### 2. CALCULATING CARBON STORAGE ###########################
+###############################################################################
+
+# Calculating carbon stored in each tree within the master dataset and saving this new dataset for use in all
+# other steps
 # date = February 2021 
 # Author = George Lloyd, University of Sheffield
 
@@ -42,34 +47,35 @@ save(equations, file = "230.sp.parameter.appendix.Rdata", compress = F)
  ## add parameter columns onto master_dataset (created in step 1)
 
 # read in master dataset from step 1
-load(file = "Outputs/master_dataset.csv")
+
+dataset_1<-read.csv("Outputs/Output step 1/dataset_1.csv")
  
 # create parameter columns by matching parameters of each species from the above dataset onto master_dataset
  
-a<-as.data.frame( (equations$a[match (master_datset$new.species, equations$new.species)]))
+a<-as.data.frame( (equations$a[match (dataset_1$new.species, equations$new.species)]))
  colnames(a)=c("a")
  
-b<-as.data.frame( (equations$b[match (master_dataset$new.species, equations$new.species)]))
+b<-as.data.frame( (equations$b[match (dataset_1$new.species, equations$new.species)]))
  colnames(b)=c("b")
  
-c<-as.data.frame( (equations$c[match (master_dataset$new.species, equations$new.species)]))
+c<-as.data.frame( (equations$c[match (dataset_1$new.species, equations$new.species)]))
  colnames(c)=c("c")
  
-d<-as.data.frame( (equations$d[match (master_dataset$new.species, equations$new.species)]))
+d<-as.data.frame( (equations$d[match (dataset_1$new.species, equations$new.species)]))
  colnames(d)=c("d")
  
-e<-as.data.frame( (equations$e[match (master_dataset$new.species, equations$new.species)]))
+e<-as.data.frame( (equations$e[match (dataset_1$new.species, equations$new.species)]))
  colnames(e)=c("e")
  
-dwd<-as.data.frame( (equations$dry.wood.density[match (master_dataset$new.species, equations$new.species)]))
+dwd<-as.data.frame( (equations$dry.wood.density[match (dataset_1$new.species, equations$new.species)]))
  colnames(dwd)=c("dwd")
  
  
 # bind these parameter columns to master_dataset creating master_5
-master_5 <- cbind(master_4, a,b,c,d,e,dwd)
+master_new <- cbind(master_1, a,b,c,d,e,dwd)
 
 # split this database into species with dbh + height measurements 
-dbh.and.height<-master_5 %>% subset(!is.na(height)) 
+dbh.and.height<-master_new %>% subset(!is.na(height)) 
  
 # and those with only dbh measurements
 dbh.only<-master_5 %>% subset(is.na(height))
@@ -128,14 +134,14 @@ master_5 <- rbind(dbh.only, dbh.and.height)
  
 #--------------------------------------------------------------------------------------------------------------------------------------
 ## removing trees with wild diameters and height
-subset<-master_5 %>%
+subset<-master_new %>%
   subset(!diameter <=1)%>%
   subset (!diameter >=200) %>%
   subset (!height >=70) %>%
   subset(!height <=0.5)
   
 # subset cities to remove those with NA's for height
-dbh.only.cities<-subset(master_5, city.name == "Bristol" | city.name == "Oslo" | city.name == "Girona" | 
+dbh.only.cities<-subset(master_new, city.name == "Bristol" | city.name == "Oslo" | city.name == "Girona" | 
        city.name == "Hamburg")
 
 # remove trees with impossible diameters in these cities that only have dbh measurements 
@@ -144,8 +150,8 @@ dbh.only.cities<-dbh.only.cities %>%
    subset (!diameter >=200)
 
 # bind this subset back to form finished  master_dataset_tidy
-master_dataset_tidy<- rbind(subset, dbh.only.cities)
+master_2<- rbind(subset, dbh.only.cities)
 
-# save dataset as master_dataset_tidy
-save(master_dataset_tidy, file = "Outputs/master_dataset_tidy.csv", compress = F)
+# save dataset as master_2
+save(master_2, file = "Outputs/Output step2/master_2.csv", compress = F)
 

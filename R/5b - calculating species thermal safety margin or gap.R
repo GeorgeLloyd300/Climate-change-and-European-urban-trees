@@ -1,4 +1,8 @@
-# Calculating each species thermal and hydraulic safety margin/gap
+###############################################################################
+############################ 5b. CALC THERMAL MARGINS / GAPS ###################
+###############################################################################
+
+# Calculating each species thermal safety margin/gap
 # date = March - June 2021 
 # Author = George Lloyd, University of Sheffield
 
@@ -14,17 +18,15 @@ options(scipen = 999)
 
 # read in relevant data :
 
-# this dataset contains 5-95th percentiles
-new.niches<- read.csv("GLOBAL_NICHES_EUROPE_PLANTS.csv")
-
-# this dataset contains 2-98th percentiles
-new.niches<- read.csv("EURO_TREES_MAIN_GLOBAL_NICHES_ALL_2.CSV")
+# this data set contains all species niche data
+new.niches <- read.csv("Outputs/Output step 4/species.niches.csv")
 
 # data on each city
-city.data<-read.csv("22.city.data.csv")
+city.data  <- read.csv("Data/Species city and equation data/22.city.data.csv")
 
-# master dataset
-tidy.subset<-read.csv("tidy.subset.csv")
+# master data set
+Master_dataset <- read.csv("Outputs/Output step 2/master_tidy_step2.csv")
+
  
 # -------------------------create master niches dataset -------------------------------------------
 
@@ -155,7 +157,7 @@ master.niches<-master.niches%>% mutate(koppen.carbon = total.carbon)%>%
 
 
 # save
-write.csv(master.niches, "master.niches.temp.2_98.csv")
+write.csv(master.niches, "Outputs/Output step5/master.niches.temp.2_98.csv")
 
 
 
@@ -166,7 +168,7 @@ master.niches<-read.csv("master.niches.temp.2_98.csv")
 master.niches<-read.csv("master.niches.temp.5_95.csv")
 
 # this is another for loop that calculates the amount of carbon in each category 
-# of safety margin 
+# of safety margin / gap
 
 # make vector of city names 
 cities<-unique(master.niches$city)
@@ -241,8 +243,8 @@ koppen<-c(city.data$Koppen.new[match(summary$city,city.data$City)])
 summary<-cbind(summary, koppen)
 
 # save datasets seperately 
-write.csv(summary, "summary.master.temp.5_95.csv")
-write.csv(summary, "summary.master.temp.2_98.csv")
+write.csv(summary, "Outputs/Output step5/summary.master.temp.5_95.csv")
+write.csv(summary, "Outputs/Output step5/summary.master.temp.2_98.csv")
 
 
 

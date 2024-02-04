@@ -2,7 +2,7 @@
 ############################ 3. CLIMATE DATA ##################################
 ###############################################################################
 
-# Extracting CHELSA climate data for each city
+# Extracting CHELSA climate data for each city 
 # date = March 2021 
 # Author = George Lloyd, University of Sheffield
 
@@ -15,43 +15,42 @@ library(viridis)
 library(raster)
 
 #-------------------------------------------------------------------------------------------------------------------
-## load dataset with info on each city
+# this script shows how chelsa climate data for each city at current, 2050 and 2070 were extracted and 
+# the average of 5 different models was calculated. Bio5 was used for temp, bio14 for prec - see methodology. 
+# this was then added onto the "22.city.data.csv" so this script isnt necessary but just shows workings
+
+# load dataset which has longitude and latitude data for each city
 city <- read.csv("Data/Species city and equation data/22.city.data.csv")
 
-# select relevant columns and get coordinates for each city 
-city<-select(city, City, Longitude, Latitude)
+# make a dataframe with only lon and lat for each city 
+city <- city %>% select(City, Longitude, Latitude)
 city <- data.frame(city$City, city$Lon, city$Lat, row.names=city$City)
 city<-dplyr::select(city, -city.City)
 colnames (city) = c("lon", "lat")
 
 
 #--------------------------------------------------------------------------------------------------------------
-##read chelsa data (current, 2050, 2070) from folder 
+##read chelsa data (either current, 2050, 2070 and 5(temp) or 14(prec)) from folder 
 
 #first import all files in a single folder as a list 
-rastlist <- list.files(path='Data/Chelsa climate data/current',pattern='CHELSA', full.names=FALSE)
+rastlist <- list.files(path='Data/Chelsa climate data/2050/5',pattern='CHELSA', full.names=FALSE)
 
 # then convert to raster stack
 allrasters <-stack(rastlist)
 
-ras <- lapply(rastlist,raster) 
+ras <- lapply(rastlist, raster) 
 
 # get the data points for each city 
-ext <- lapply(ras,extract, city) 
-data<-as.data.frame(ext)
-names(data)<-c(1,2,3,4,5)
+ext <- lapply(ras, extract, city) 
+data <- as.data.frame(ext)
+names(data) <- c(1,2,3,4,5)
 
 # average across all models for each city
 data$Avg_score = rowMeans(data[,c(1,2,3,4,5)])
 
 # add onto city df
-city.2$"current_max_temp_warm_month" = data$Avg_score
-city.2$"current_precip_dry_month" = data$Avg_score
-city.2$"2050_max_temp_warm_month" = data$Avg_score
-city.2$"2050_precip_dry_month" = data$Avg_score
-city.2$"2070_max_temp_warm_month" = data$Avg_score
-city.2$"2070_precip_dry_month" = data$Avg_score
+city$"Temperature.2050" = data$Avg_score
 
 # save dataset
-write.csv(data, "Chelsa.csv")
+write.csv(city, "22.city.data.csv")
 
