@@ -1,5 +1,5 @@
 ###############################################################################
-############################ 7B. MAKE FIG 3 KOPPEN MAP #######################
+############################ 7B. CREATE FIG 3 KOPPEN MAP #######################
 ###############################################################################
 
 # Create a figure showing each climate zones temperature and precipitation at 
@@ -27,7 +27,7 @@ climate<-read.csv("city.tidy.climate.2.csv") # data on each cities climate at di
 
 
 # make labels 
-category.labs<-c("Precipitation of driest month(mm)", "Temperature of hottest month(°C)")
+category.labs<-c("Precipitation of driest month(mm)", "Temperature of hottest month(Â°C)")
 names(category.labs) <- c("prec", "temp")
 
 #---------------------------- HOW THIS WORKS -------------------------------------------------------------------------------------------------------
@@ -191,7 +191,7 @@ b<-climate%>%subset(koppen.new =="Warm Mediterranean") %>%
   facet_grid(.~City, switch = "x")+
   geom_line(size =0.75, show.legend = FALSE)+
   geom_point(size = 2.5, colour ="black",show.legend = FALSE)+
-  labs(title ="Warm Mediterranean climate", x= "", y ="Temperature of hottest month (°C)", shape ="Time") +
+  labs(title ="Warm Mediterranean climate", x= "", y ="Temperature of hottest month (Â°C)", shape ="Time") +
   scale_x_discrete(limits=c("Baseline","2050","2070"),expand=expansion(mult=c(0.1, 0.1)))+
   ylim(19,38)+
   theme(strip.text.y = element_blank(),axis.text.x = element_blank(), axis.ticks.x = element_blank(),
@@ -233,7 +233,7 @@ b<-climate%>%subset(koppen.new =="Cold semi-arid") %>%
   facet_grid(.~City, switch = "x")+
   geom_line(size =0.75, show.legend = FALSE)+
   geom_point(size = 2.5, colour ="black",show.legend = FALSE)+
-  labs(title ="Cold semi-arid climate", x= "", y ="Temperature of hottest month (°C)", shape ="Time") +
+  labs(title ="Cold semi-arid climate", x= "", y ="Temperature of hottest month (Â°C)", shape ="Time") +
   scale_x_discrete(limits=c("Baseline","2050","2070"),expand=expansion(mult=c(0.1, 0.1)))+
   ylim(19,38)+
   theme(strip.text.y = element_blank(),axis.text.x = element_blank(), axis.ticks.x = element_blank(),
