@@ -49,7 +49,7 @@ source('./R/3 - extracting CHELSA climate data.R')
 ## This script calculates the climate niche position of all species within each city at different time points 
 if(calc_niche) {
   
-  source('./R/4 - Calculate tree species niches.R')
+  source('./R/4 - calculate tree species niches.R')
 
 }
 
@@ -65,8 +65,8 @@ if(calc_safety) {
   
   source('./R/5a- calculating species hydraulic safety margin or gap.R')
   source('./R/5b - calculating species thermal safety margin or gap.R')
-  source('./R/6a - other calculations.R')
-  source('./R/6b - other calculations continued.R')
+  source('./R/6a - calculating carbon at risk.R')
+  source('./R/6b - calculating carbon at risk continued.R')
   
 }
 
@@ -78,10 +78,10 @@ if(calc_safety) {
 if(figures) {
   
   ## 
-  source('./R/7a - make figure 1 (koppen map).R') ## Create Figure 1). for the publication
-  source('./R/7b - make figure 2 (climate graph).R') ## Create Figure 1). for the publication
-  source('./R/7c - make figure 3 (climate graph).R') ## Create Figure 1). for the publication
-  source('./R/7d - make figure 4 (climate graph).R') ## Create Figure 1). for the publication
+  source('./R/7a - create figure 1 (koppen map).R') ## Create Figure 1). for the publication
+  source('./R/7b - create figure 2 (climate graph).R') ## Create Figure 1). for the publication
+  source('./R/7c - create figure 3 (climate graph).R') ## Create Figure 1). for the publication
+  source('./R/7d - create figure 4 (climate graph).R') ## Create Figure 1). for the publication
   
   
 
