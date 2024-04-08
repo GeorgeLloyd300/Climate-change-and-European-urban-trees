@@ -14,7 +14,7 @@ options(scipen = 999)
 # read in relevant data :
 
 # this data set contains all species niche data
-new.niches <- read.csv("Outputs/Output step 4/species.niches.csv")
+new.niches <- read.csv("Outputs/Output step 4/Species.niches.csv")
 
 # data on each city
 city.data  <- read.csv("Data/Species city and equation data/22.city.data.csv")
