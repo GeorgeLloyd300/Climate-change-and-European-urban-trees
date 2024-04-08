@@ -1,8 +1,8 @@
 ###############################################################################
-############################ 6b. MISC CALCULATIONS CONTINUED ###################
+############## 6b. CALCULATING RISK TO CARBON CONTINUED #######################
 ###############################################################################
 
-# Various calculations continued
+# Various calculations relating to riks to current carbon, continued
 # date = 07/07/2023 
 # Author = George Lloyd, University of Sheffield
 
@@ -159,9 +159,9 @@ df.all.prec<-read.csv("df.all.prec.0_100.csv")
 df.all.temp<-read.csv("df.all.temp.0_100.csv")
 
 temp.risk<-df.all.temp%>% 
-  subset(safety.margin!= "-0.51 to -18캜")%>%
-  subset(safety.margin!= "0 to -0.5캜")%>%
-  subset(safety.margin!= "0 to 0.5캜")%>%group_by(koppen, time)%>%
+  subset(safety.margin!= "-0.51 to -18째C")%>%
+  subset(safety.margin!= "0 to -0.5째C")%>%
+  subset(safety.margin!= "0 to 0.5째C")%>%group_by(koppen, time)%>%
   summarise(sum = sum(percentage), se= sum(se))
 
 prec.risk<-df.all.prec%>% 
@@ -175,8 +175,8 @@ df.all.prec<-read.csv("df.all.prec.csv")
 df.all.temp<-read.csv("df.all.temp.csv")
 
 temp.risk.2<-df.all.temp%>% 
-  subset(safety.margin!= "-0.51 to -18캜")%>%
-  subset(safety.margin!= "0 to -0.5캜")%>%
+  subset(safety.margin!= "-0.51 to -18째C")%>%
+  subset(safety.margin!= "0 to -0.5째C")%>%
   group_by(koppen, time)%>%
   summarise(sum = sum(percentage), se= sum(se))
 
