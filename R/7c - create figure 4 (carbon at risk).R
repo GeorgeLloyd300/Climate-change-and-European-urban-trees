@@ -1,5 +1,5 @@
 ###############################################################################
-############################ 7c. MAKE FIG 4  ##################################
+############################ 7c. CREATE FIG 4  ##################################
 ###############################################################################
 
 library(tidyverse)
@@ -117,15 +117,15 @@ df.all<-rbind(a,b,c,d,e)
 ###### make temp plot ######
 
 # temp categories
-categories.temp <-c( "5 to 15캜","3.51 to 5캜", "2.51 to 3.5캜", "1.51 to 2.5캜",
-                "0.51 to 1.5캜","0 to 0.5캜", "0 to -0.5캜","-0.51 to -18캜")
+categories.temp <-c( "5 to 15째C","3.51 to 5째C", "2.51 to 3.5째C", "1.51 to 2.5째C",
+                "0.51 to 1.5째C","0 to 0.5째C", "0 to -0.5째C","-0.51 to -18째C")
 
 
-names.temp <-c( "-5 to -15캜","-3.51 to -5캜", "-2.51 to -3.5캜", "-1.51 to -2.5캜",
-                "-0.51 to -1.5캜","0 to -0.5캜", "0 to 0.5캜","0.51 to 18캜")
+names.temp <-c( "-5 to -15째C","-3.51 to -5째C", "-2.51 to -3.5째C", "-1.51 to -2.5째C",
+                "-0.51 to -1.5째C","0 to -0.5째C", "0 to 0.5째C","0.51 to 18째C")
 
-names.temp <-c( "5 to 15캜 gap","3.51 to 5캜 gap", "2.51 to 3.5캜 gap", "1.51 to 2.5캜 gap",
-                "0.51 to 1.5캜 gap","0 to 0.5캜 gap", "0 to 0.5캜 margin","0.51 to 18캜 margin")
+names.temp <-c( "5 to 15째C gap","3.51 to 5째C gap", "2.51 to 3.5째C gap", "1.51 to 2.5째C gap",
+                "0.51 to 1.5째C gap","0 to 0.5째C gap", "0 to 0.5째C margin","0.51 to 18째C margin")
 
 # define colours
 mycolors.temp <- c("#990000", "#CC0000", "#FF0000", "#FF3333","#FF6633", "#FF9966", 
@@ -242,9 +242,9 @@ dev.off()
 # calculate current, 2050, 2070 carbon at risk 
 
 temp.risk<-df.all%>% 
-  subset(safety.margin!= "-0.51 to -18캜")%>%
-  subset(safety.margin!= "0 to -0.5캜")%>%
-  subset(safety.margin!= "0 to 0.5캜")%>%group_by(koppen, time)%>%
+  subset(safety.margin!= "-0.51 to -18째C")%>%
+  subset(safety.margin!= "0 to -0.5째C")%>%
+  subset(safety.margin!= "0 to 0.5째C")%>%group_by(koppen, time)%>%
   summarise(sum = sum(percentage), se= sum(se))
 
 prec.risk<-df.all%>% 
