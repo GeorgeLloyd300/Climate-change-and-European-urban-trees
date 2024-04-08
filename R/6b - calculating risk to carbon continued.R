@@ -2,7 +2,7 @@
 ############## 6b. CALCULATING RISK TO CARBON CONTINUED #######################
 ###############################################################################
 
-# Various calculations relating to riks to current carbon, continued
+# Various calculations relating to risks to current carbon, continued
 # date = 07/07/2023 
 # Author = George Lloyd, University of Sheffield
 
