@@ -1,5 +1,5 @@
 ###############################################################################
-############################ 7D. MAKE FIG 5  ##################################
+############################ 7D. CREATE FIG 5  ##################################
 ###############################################################################
 
 # Create a figure showing the average safety margin/gap of every species in 
@@ -185,8 +185,8 @@ a<-ggplot(Cfb.prec, aes(x=temp.margin, y=safety.margin.2070))+
 total carbon",
                         labels = c("0.001", "0.1", "1", "5","10","15"))+
   facet_grid(.~title)+
-  labs(y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (°C)", colour="Thermal safety 
-margin 2070 (°C)")+ scale_x_continuous(limits = c(-11, 9), expand = c(0, 0), breaks = c(-10, -5, 0, 5, 10), labels = c("10 margin", "5 margin", "0", "5 gap", "10 gap")) +
+  labs(y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (Â°C)", colour="Thermal safety 
+margin 2070 (Â°C)")+ scale_x_continuous(limits = c(-11, 9), expand = c(0, 0), breaks = c(-10, -5, 0, 5, 10), labels = c("10 margin", "5 margin", "0", "5 gap", "10 gap")) +
   scale_y_continuous(limits = c(-46,20), expand = c(0, 0), breaks = c( -40, -20, 0, 20), labels = c("40 margin", "20 margin", "0", "20 gap"))+theme_bw()+
   theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
   theme(plot.title = element_text(hjust = 0.5, size =18, face= "bold"))+
@@ -200,10 +200,10 @@ margin 2070 (°C)")+ scale_x_continuous(limits = c(-11, 9), expand = c(0, 0), bre
         axis.title.y = element_blank(),axis.title.x = element_blank(),
         axis.text.x = element_text(size = 14), strip.text.x = element_text(size=18))+
   theme(plot.margin=grid::unit(c(2,2,2,2), "mm"))+
-  annotate("text", x = 5, y = -19, size=5, label  = "43.17%±39.80")+
-  annotate("text", x = -5, y = 10, size=5, label  = "0%±0")+
-  annotate("text", x = 5, y = 10, size=5, label   = "0.05%±0.16")+
-  annotate("text", x = -5, y = -19, size=5, label = "56.76%±39.74 ") + theme(legend.position = "none") 
+  annotate("text", x = 5, y = -19, size=5, label  = "43.17%Â±39.80")+
+  annotate("text", x = -5, y = 10, size=5, label  = "0%Â±0")+
+  annotate("text", x = 5, y = 10, size=5, label   = "0.05%Â±0.16")+
+  annotate("text", x = -5, y = -19, size=5, label = "56.76%Â±39.74 ") + theme(legend.position = "none") 
 a
 
 # 2-98 plot
@@ -212,8 +212,8 @@ aa<-ggplot(Cfb.prec, aes(x=temp.margin, y=safety.margin.2070))+
   scale_size_continuous(breaks = c(0.1, 1,5,10), range = c(0.75, 20) , name = "Percentage of
 total carbon",labels = c("0.1", "1", "5","10"))+
   facet_grid(.~title)+
-  labs(y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (°C)", colour="Thermal safety 
-margin 2070 (°C)")+ scale_x_continuous(limits = c(-11, 9), expand = c(0, 0), breaks = c(-10, -5, 0, 5), labels = c("10 margin","5 margin", "0", "5 gap")) +
+  labs(y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (Â°C)", colour="Thermal safety 
+margin 2070 (Â°C)")+ scale_x_continuous(limits = c(-11, 9), expand = c(0, 0), breaks = c(-10, -5, 0, 5), labels = c("10 margin","5 margin", "0", "5 gap")) +
   scale_y_continuous(limits = c(-46,20), expand = c(0, 0), breaks = c(-40, -20, 0, 20), labels = c("40 margin", "20 margin", "0", "20 gap"))+theme_bw()+
   theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
   theme(plot.title = element_text(hjust = 0.5, size =18, face= "bold"))+
@@ -227,10 +227,10 @@ margin 2070 (°C)")+ scale_x_continuous(limits = c(-11, 9), expand = c(0, 0), bre
         axis.title.y = element_blank(),axis.title.x = element_blank(),
         axis.text.x = element_text(size = 14), strip.text.x = element_text(size=18))+
   theme(plot.margin=grid::unit(c(2,2,2,2), "mm"))+
-  annotate("text", x = 4, y = -7, size=5, label  = "29.55%±36.26")+ 
-  annotate("text", x = -6, y = 8, size=5, label  = "0%±0")+
-  annotate("text", x = 4, y = 8, size=5, label  = "0.05%±0.16")+
-  annotate("text", x = -6, y = -7, size=5, label  = "70.33±36.21")
+  annotate("text", x = 4, y = -7, size=5, label  = "29.55%Â±36.26")+ 
+  annotate("text", x = -6, y = 8, size=5, label  = "0%Â±0")+
+  annotate("text", x = 4, y = 8, size=5, label  = "0.05%Â±0.16")+
+  annotate("text", x = -6, y = -7, size=5, label  = "70.33Â±36.21")
 aa
 
 
@@ -244,8 +244,8 @@ b<-ggplot(Csa.prec, aes(x=temp.margin, y=safety.margin.2070))+
 total carbon",
                         labels = c("0.001","1", "5", "10", "30", "50"))+
   facet_grid(. ~ title)+
-  labs( y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (°C)", colour="Thermal safety 
-margin 2070 (°C)", size = "Current carbon
+  labs( y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (Â°C)", colour="Thermal safety 
+margin 2070 (Â°C)", size = "Current carbon
 storage (tonnes)")+ scale_x_continuous(limits = c(-9, 9), expand = c(-0, -0), breaks = c(-10, -5, 0, 5, 10), labels = c("10 margin","5 margin", "0", "5 gap", "10 gap")) +
   scale_y_continuous(limits = c(-16,15), expand = c(0, 0), breaks = c(-15, 0, 15), labels = c("15 margin","0", "15 gap"))+theme_bw()+
   theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
@@ -260,10 +260,10 @@ storage (tonnes)")+ scale_x_continuous(limits = c(-9, 9), expand = c(-0, -0), br
         axis.title.y = element_blank(),axis.title.x = element_blank(),
         axis.text.x = element_text(size = 14),strip.text.x = element_text(size=18))+
   theme(plot.margin=grid::unit(c(2,2,2,2), "mm"))+
-  annotate("text", x = 6.5, y = -6, size=5, label  = "71.99%±NA")+
-  annotate("text", x = -6, y = 13, size=5, label  = "0%±NA")+
-  annotate("text", x = 6.5, y = 13, size=5, label = "0.01%±NA")+
-  annotate("text", x = -5, y = -6, size=5, label   = "28.01%±NA")+ theme(legend.position = "none") 
+  annotate("text", x = 6.5, y = -6, size=5, label  = "71.99%Â±NA")+
+  annotate("text", x = -6, y = 13, size=5, label  = "0%Â±NA")+
+  annotate("text", x = 6.5, y = 13, size=5, label = "0.01%Â±NA")+
+  annotate("text", x = -5, y = -6, size=5, label   = "28.01%Â±NA")+ theme(legend.position = "none") 
 b
 
 
@@ -273,8 +273,8 @@ bb<-ggplot(Csa.prec, aes(x=temp.margin, y=safety.margin.2070))+
   scale_size_continuous(breaks = c(0.1, 1, 5, 10, 15), range = c(0.75, 20) , name = "Percentage of 
 total carbon", labels = c("0.1","1", "5", "10", "15"))+
   facet_grid(. ~ title)+
-  labs( y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (°C)", colour="Thermal safety 
-margin 2070 (°C)", size = "Current carbon
+  labs( y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (Â°C)", colour="Thermal safety 
+margin 2070 (Â°C)", size = "Current carbon
 storage (tonnes)")+ scale_x_continuous(limits = c(-9, 9), expand = c(-0, -0), breaks = c(-10,-5, 0, 5, 10), labels = c("10 margin", "5 margin", "0", "5 gap", "10 gap")) +
   scale_y_continuous(limits = c(-16, 15), expand = c(0, 0), breaks = c(-15, 0, 15), labels = c("15 margin","0", "15 gap"))+theme_bw()+
   theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
@@ -289,10 +289,10 @@ storage (tonnes)")+ scale_x_continuous(limits = c(-9, 9), expand = c(-0, -0), br
         axis.title.y = element_blank(),axis.title.x = element_blank(),
         axis.text.x = element_text(size = 14),strip.text.x = element_text(size=18))+
   theme(plot.margin=grid::unit(c(2,2,2,2), "mm"))+
-  annotate("text", x = -5, y = 5, size=5, label  = "0%±NA")+ 
-  annotate("text", x = 5, y = -5, size=5, label  = "69.71%±NA")+ 
-  annotate("text", x = 5, y = 5, size=5, label  = "0.01%±NA")+ 
-  annotate("text", x = -5, y = -5, size=5, label  = "30.29%±NA")
+  annotate("text", x = -5, y = 5, size=5, label  = "0%Â±NA")+ 
+  annotate("text", x = 5, y = -5, size=5, label  = "69.71%Â±NA")+ 
+  annotate("text", x = 5, y = 5, size=5, label  = "0.01%Â±NA")+ 
+  annotate("text", x = -5, y = -5, size=5, label  = "30.29%Â±NA")
 
 bb
 
@@ -304,8 +304,8 @@ c<-ggplot(Dfb.prec, aes(x=temp.margin, y=safety.margin.2070, size =carbon))+
   geom_point(alpha =0.7)+ scale_size(range = c(0.75, 20))+
   theme(plot.title = element_text(hjust = 0.5, size =12, face= "bold"))+
   facet_grid(. ~ title)+
-  labs( y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (°C)", colour="Thermal safety 
-margin 2070 (°C)", size = "Current carbo
+  labs( y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (Â°C)", colour="Thermal safety 
+margin 2070 (Â°C)", size = "Current carbo
 storage (tonnes)")+ scale_x_continuous(limits = c(-10, 11), expand = c(-0, -0), breaks = c(-5, 0, 5),labels = c( "5 margin","0", "5 gap")) +
   scale_y_continuous(limits = c(-37, 15), expand = c(0, 0), breaks = c(-30,-15, 0, 15),labels = c("30 margin", "15 margin", "0", "15 gap"))+theme_bw()+
   theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
@@ -320,10 +320,10 @@ storage (tonnes)")+ scale_x_continuous(limits = c(-10, 11), expand = c(-0, -0), 
         axis.title.y = element_blank(),axis.title.x = element_blank(),
         axis.text.x = element_text(size = 14), strip.text.x = element_text(size=18))+
   theme(plot.margin=grid::unit(c(2,2,2,2), "mm"))+
-  annotate("text", x = 7, y = -12, size=5, label  = "54.89%±40.47")+
-  annotate("text", x = -4.5, y = 5, size=5, label  = "0%±0")+
-  annotate("text", x = 7, y = 5, size=5, label   = "0.17%±0.33")+
-  annotate("text", x = -4, y = -12, size=5, label = "44.94%±40.42")+
+  annotate("text", x = 7, y = -12, size=5, label  = "54.89%Â±40.47")+
+  annotate("text", x = -4.5, y = 5, size=5, label  = "0%Â±0")+
+  annotate("text", x = 7, y = 5, size=5, label   = "0.17%Â±0.33")+
+  annotate("text", x = -4, y = -12, size=5, label = "44.94%Â±40.42")+
   theme(legend.key.size = unit(0.5,"point"))+ theme(legend.position = "none")   
 c
 
@@ -333,8 +333,8 @@ cc<-ggplot(Dfb.prec, aes(x=temp.margin, y=safety.margin.2070, size =carbon))+
 total carbon", labels = c("0.1","1", "5", "10", "15"))+
   theme(plot.title = element_text(hjust = 0.5, size =12, face= "bold"))+
   facet_grid(. ~ title)+
-  labs( y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (°C)", colour="Thermal safety 
-margin 2070 (°C)", size = "Current carbon
+  labs( y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (Â°C)", colour="Thermal safety 
+margin 2070 (Â°C)", size = "Current carbon
 storage (tonnes)")+ scale_x_continuous(limits = c(-10, 11), expand = c(-0, -0), breaks = c( -5, 0, 5),labels = c("5 margin",  "0",  "5 margin")) +
   scale_y_continuous(limits = c(-37, 15), expand = c(0, 0), breaks = c(-30,-15, 0, 15),labels = c("30 margin","15 margin", "0", "15 gap"))+theme_bw()+
   theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
@@ -349,10 +349,10 @@ storage (tonnes)")+ scale_x_continuous(limits = c(-10, 11), expand = c(-0, -0), 
         axis.title.y = element_blank(),axis.title.x = element_blank(),
         axis.text.x = element_text(size = 14), strip.text.x = element_text(size=18))+
   theme(plot.margin=grid::unit(c(2,2,2,2), "mm"))+
-  annotate("text", x = 5, y = -17, size=5, label  = "44.01%±30.47")+
-  annotate("text", x =-5, y = 5, size=5, label  = "0%±0")+
-  annotate("text", x =5, y = 5, size=5, label  = "0.17%±0.33")+
-  annotate("text", x =-5, y = -17, size=5, label  = "55.83%±30.47")+
+  annotate("text", x = 5, y = -17, size=5, label  = "44.01%Â±30.47")+
+  annotate("text", x =-5, y = 5, size=5, label  = "0%Â±0")+
+  annotate("text", x =5, y = 5, size=5, label  = "0.17%Â±0.33")+
+  annotate("text", x =-5, y = -17, size=5, label  = "55.83%Â±30.47")+
   theme(legend.key.size = unit(0.5,"point"))  
 cc
 
@@ -363,8 +363,8 @@ Cfa.prec$title <- "Humid subtropical climate"
 d<-ggplot(Cfa.prec, aes(x=temp.margin, y=safety.margin.2070, size =carbon))+
   geom_point(alpha =0.7)+ scale_size(range = c(0.75, 20))+
   facet_grid(.~title)+
-  labs(y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (°C)", colour="Thermal safety 
-margin 2070 (°C)", size = "Current carbon
+  labs(y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (Â°C)", colour="Thermal safety 
+margin 2070 (Â°C)", size = "Current carbon
 storage (tonnes)")+ scale_x_continuous(limits = c(-8, 15), expand = c(-0, -0), breaks = c(-5,0,5,10),labels = c("5 margin", "0", "5 gap", "10 gap")) +
   scale_y_continuous(limits = c(-39,31), expand = c(0, 0), breaks = c(-30,0,30),labels = c("30 margin","0", "30 gap"))+ theme_bw()+
   theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
@@ -380,10 +380,10 @@ storage (tonnes)")+ scale_x_continuous(limits = c(-8, 15), expand = c(-0, -0), b
         axis.title.y = element_blank(),axis.title.x = element_blank(),
         axis.text.y = element_text(size=14), axis.text.x = element_text(size = 14))+
   theme(plot.margin=grid::unit(c(2,2,2,2), "mm"))+
-  annotate("text", x = 11, y = -13, size=5, label  = "92.15%±8.94")+
-  annotate("text", x = -4, y = 18, size=5, label  = "0%±0")+
-  annotate("text", x = 11, y = 18, size=5, label   = "0.46%±0.61")+
-  annotate("text", x = -4, y = -13, size=5, label = "7.39%±8.34") +
+  annotate("text", x = 11, y = -13, size=5, label  = "92.15%Â±8.94")+
+  annotate("text", x = -4, y = 18, size=5, label  = "0%Â±0")+
+  annotate("text", x = 11, y = 18, size=5, label   = "0.46%Â±0.61")+
+  annotate("text", x = -4, y = -13, size=5, label = "7.39%Â±8.34") +
   theme(legend.key.size = unit(0.5,"point"))+ theme(legend.position = "none")    
 d
 
@@ -393,8 +393,8 @@ dd<-ggplot(Cfa.prec, aes(x=temp.margin, y=safety.margin.2070, size =carbon))+
   scale_size_continuous(breaks = c(0.1, 1, 5, 10, 15), range = c(0.75, 20) , name = "Percentage of 
 total carbon", labels = c("0.1","1", "5", "10", "15"))+
   facet_grid(.~title)+
-  labs(y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (°C)", colour="Thermal safety 
-margin 2070 (°C)", size = "Current carbon
+  labs(y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (Â°C)", colour="Thermal safety 
+margin 2070 (Â°C)", size = "Current carbon
 storage (tonnes)")+ scale_x_continuous(limits = c(-8, 15), expand = c(-0, -0), breaks = c(-5,0,5,10),labels = c("5 margin", "0","5 gap", "10 gap")) +
   scale_y_continuous(limits = c(-39, 31), expand = c(0, 0), breaks = c(-30,0,30),labels = c("30 margin",  "0", "30 gap"))+ theme_bw()+
   theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
@@ -410,10 +410,10 @@ storage (tonnes)")+ scale_x_continuous(limits = c(-8, 15), expand = c(-0, -0), b
         axis.title.y = element_blank(),axis.title.x = element_blank(),
         axis.text.y = element_text(size=14), axis.text.x = element_text(size = 14))+
   theme(plot.margin=grid::unit(c(2,2,2,2), "mm"))+
-  annotate("text", x = 8, y = -10, size=5, label  = "82.52%±20.59")+
-  annotate("text", x = -4, y = 5, size=5, label  = "0%±0")+
-  annotate("text", x = 8, y = 5, size=5, label  = "0.45%±0.61")+
-  annotate("text", x = -3.5, y = -10, size=5, label  = "17.02%±20.00")+
+  annotate("text", x = 8, y = -10, size=5, label  = "82.52%Â±20.59")+
+  annotate("text", x = -4, y = 5, size=5, label  = "0%Â±0")+
+  annotate("text", x = 8, y = 5, size=5, label  = "0.45%Â±0.61")+
+  annotate("text", x = -3.5, y = -10, size=5, label  = "17.02%Â±20.00")+
   theme(legend.key.size = unit(0.5,"point"))  
 dd
 
@@ -425,8 +425,8 @@ e<-ggplot(Dsk.prec, aes(x=temp.margin, y=safety.margin.2070, size =carbon))+
   geom_point(alpha =0.7)+ scale_size(range = c(0.75, 20))+
   theme(plot.title = element_text(hjust = 0.5, size =12, face= "bold"))+
   facet_grid(.~title)+
-  labs( y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (°C)", colour="Thermal safety 
-margin 2070 (°C)", size = "Current carbon
+  labs( y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (Â°C)", colour="Thermal safety 
+margin 2070 (Â°C)", size = "Current carbon
 storage (tonnes)")+ scale_x_continuous(limits = c(-4, 16), expand = c(-0, -0), breaks = c(-5,0,5,10,15),labels = c("5 margin", "0","5 gap", "10 gap", "15 gap")) +
   scale_y_continuous(limits = c(-12, 21), expand = c(0, 0), breaks = c(-10,0,10, 20),labels = c("10 margin", "0", "10 gap", "20 gap"))+theme_bw()+
   theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
@@ -441,10 +441,10 @@ storage (tonnes)")+ scale_x_continuous(limits = c(-4, 16), expand = c(-0, -0), b
         axis.title.y = element_blank(),axis.title.x = element_blank(),
         axis.text.x = element_text(size = 14), strip.text.x = element_text(size=18))+
   theme(plot.margin=grid::unit(c(2,2,2,2), "mm"))+
-  annotate("text", x = 13, y = -9.7, size=5, label  = "97.58%±2.93")+
-  annotate("text", x = -2, y = 19, size=5, label  = "0%±0")+
-  annotate("text", x = 13, y = 19, size=5, label   = "2.40%±2.94")+
-  annotate("text", x = -1.5, y = -9.7, size=5, label = "0.02%±0.02") +
+  annotate("text", x = 13, y = -9.7, size=5, label  = "97.58%Â±2.93")+
+  annotate("text", x = -2, y = 19, size=5, label  = "0%Â±0")+
+  annotate("text", x = 13, y = 19, size=5, label   = "2.40%Â±2.94")+
+  annotate("text", x = -1.5, y = -9.7, size=5, label = "0.02%Â±0.02") +
   theme(legend.key.size = unit(0.5,"point"))+ theme(legend.position = "none")    
 e
 
@@ -455,8 +455,8 @@ ee<-ggplot(Dsk.prec, aes(x=temp.margin, y=safety.margin.2070, size =carbon))+
 total carbon", labels = c("0.1","1", "5", "10", "15"))+
   theme(plot.title = element_text(hjust = 0.5, size =12, face= "bold"))+
   facet_grid(.~title)+
-  labs( y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (°C)", colour="Thermal safety 
-margin 2070 (°C)", size = "Current carbon
+  labs( y="Hydraulic safety 2070 (mm)", x= "Thermal safety 2070 (Â°C)", colour="Thermal safety 
+margin 2070 (Â°C)", size = "Current carbon
 storage (tonnes)")+ scale_x_continuous(limits = c(-4, 16), expand = c(-0, -0), breaks = c(-5, 0, 5, 10, 15),labels = c("5 margin", "0","5 gap", "10 gap", "15 gap")) +
   scale_y_continuous(limits = c(-12, 21), expand = c(0, 0), breaks = c(-10,0,10, 20),labels = c("10 margin", "0", "10 gap", "20 gap"))+theme_bw()+
   theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
@@ -471,15 +471,15 @@ storage (tonnes)")+ scale_x_continuous(limits = c(-4, 16), expand = c(-0, -0), b
         axis.title.y = element_blank(),axis.title.x = element_blank(),
         axis.text.x = element_text(size = 14), strip.text.x = element_text(size=18))+
   theme(plot.margin=grid::unit(c(2,2,2,2), "mm"))+
-  annotate("text", x = 12.5, y = -10, size=5, label  = "99.21%±0.92")+
-  annotate("text", x = -2, y = 5, size=5, label  = "0%±0")+
-  annotate("text", x = 12.5, y = 5, size=5, label  = "0.75%±0.90")+
-  annotate("text", x = -0.8, y = -10, size=5, label  = "0.02%±0.01")+
+  annotate("text", x = 12.5, y = -10, size=5, label  = "99.21%Â±0.92")+
+  annotate("text", x = -2, y = 5, size=5, label  = "0%Â±0")+
+  annotate("text", x = 12.5, y = 5, size=5, label  = "0.75%Â±0.90")+
+  annotate("text", x = -0.8, y = -10, size=5, label  = "0.02%Â±0.01")+
   theme(legend.key.size = unit(0.5,"point"))
 ee
 
 # combine these 5 figures and print
-label1 <- grobTree(textGrob("Thermal safety margin/gap 2070 (°C)", x=0.32,  y=0, hjust=0, vjust= 1.3,
+label1 <- grobTree(textGrob("Thermal safety margin/gap 2070 (Â°C)", x=0.32,  y=0, hjust=0, vjust= 1.3,
                           gp=gpar(fontsize=18)))
 
 label2 <- grobTree(textGrob("Hydraulic safety margin/gap 2070 (mm)", x=0,  y=0.5, vjust= -1, rot=90,
