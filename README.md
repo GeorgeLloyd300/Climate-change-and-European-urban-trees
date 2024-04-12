@@ -14,9 +14,6 @@ By 2070 many species will experience climates outside their current niches
 Carbon storage, and other services, are threatened across European cities 
 Urgent mitigation is needed to increase climate change resilience of urban forests
 
-ACKNOWLEDGEMENTS
-
-We thank all the municipalities and organisations responsible for carrying out the urban tree inventories across Europe, and those who made them available to GUTI. KLE is supported by NERC grant NE/W002906/1. AO is supported by a Hatch Project (CA-D-PLS-2735-H).
 
 ABSTRACT 
 
